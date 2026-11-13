@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dxivgcn6ag7tx"]
+
+[ext_resource type="Texture2D" uid="uid://dy26arq3aeccm" path="res://assets/cursor-character-broken-leg-isolated-white-background-d-illustration-166275480 Background Removed.png" id="1_bdw3i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xbyin"]
+radius = 40.0
+height = 122.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1651288996]
+
+[node name="CursorCharacterBrokenLegIsolatedWhiteBackgroundDIllustration166275480BackgroundRemoved" type="Sprite2D" parent="." unique_id=65265417]
+position = Vector2(3.0517574e-05, 0.99998474)
+scale = Vector2(0.23166665, 0.23166667)
+texture = ExtResource("1_bdw3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270202086]
+shape = SubResource("CapsuleShape2D_xbyin")

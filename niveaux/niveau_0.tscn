@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bbkygvqw7gatn"]
+
+[ext_resource type="Texture2D" uid="uid://b4r77jd52yuvf" path="res://assets/page_stress.png" id="1_d24vj"]
+
+[node name="Niveau 0" type="Node2D" unique_id=2042643648]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1635559790]
+position = Vector2(960, 540)
+scale = Vector2(0.6558892, 0.65588915)
+texture = ExtResource("1_d24vj")
