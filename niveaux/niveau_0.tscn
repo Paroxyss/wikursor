@@ -19,8 +19,9 @@ blend_mode = 3
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggec4"]
 
-[node name="Niveau 0" type="Node2D" unique_id=2042643648 node_paths=PackedStringArray("spawnList")]
+[node name="Niveau 0" type="Node2D" unique_id=2042643648 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_xiyxc")
+playerSpawn = NodePath("playerspawn")
 spawnList = [NodePath("Spawner")]
 
 [node name="Fond" type="Sprite2D" parent="." unique_id=1635559790]
@@ -245,3 +246,6 @@ enemy = ExtResource("11_bum3b")
 interval = 0.01
 first_delay = 2.0
 amount = 100
+
+[node name="playerspawn" type="Node2D" parent="." unique_id=1106730830]
+position = Vector2(1051, 702)

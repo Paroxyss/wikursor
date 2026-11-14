@@ -8,10 +8,11 @@ var niveau : LevelProperties
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = playerFile.instantiate()
-	add_child(player)
 	niveau = levelList[0].instantiate()
 	niveau.player = player
 	add_child(niveau)
+	player.position = niveau.playerSpawn.position
+	add_child(player)
 	setup_level()
 	camera = cameraFile.instantiate()
 	camera.niveau = niveau
