@@ -11,9 +11,14 @@
 player = NodePath("Player")
 
 [node name="Niveau" parent="GameManager" unique_id=2042643648 node_paths=PackedStringArray("spawnList") instance=ExtResource("2_d11us")]
-spawnList = [NodePath("../Spawner")]
+spawnList = [NodePath("../Spawner"), NodePath("../Spawner2")]
 
 [node name="Player" parent="GameManager" unique_id=1651288996 instance=ExtResource("3_qaf17")]
 
 [node name="Spawner" parent="GameManager" unique_id=2013283453 instance=ExtResource("4_e5wc5")]
 position = Vector2(354, 314)
+timer = 1.0
+
+[node name="Spawner2" parent="GameManager" unique_id=847060338 instance=ExtResource("4_e5wc5")]
+position = Vector2(1128, 955)
+timer = 2.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://o4ujyt8a3byn"]
 
 [ext_resource type="Script" uid="uid://cnqwc7nw68yoj" path="res://scripts/spawner.gd" id="1_dw3g1"]
-[ext_resource type="PackedScene" uid="uid://cdjyjgbssxc6b" path="res://entities/mechant1.tscn" id="2_xqsf3"]
+[ext_resource type="PackedScene" uid="uid://cdjyjgbssxc6b" path="res://entities/Enemies/mechant1.tscn" id="2_xqsf3"]
 
 [node name="Spawner" type="Node2D" unique_id=2013283453]
 script = ExtResource("1_dw3g1")
