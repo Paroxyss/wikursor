@@ -51,12 +51,10 @@ script = ExtResource("7_qutrt")
 [node name="Wall" parent="Chateau !!" unique_id=775184600 instance=ExtResource("8_byjo5")]
 position = Vector2(2120, 624.00006)
 rotation = 0.38202858
-collision_layer = 65527
 
 [node name="Wall2" parent="Chateau !!" unique_id=528834637 instance=ExtResource("8_byjo5")]
 position = Vector2(1471, 127.00006)
 rotation = 1.0294819
-collision_layer = 65527
 
 [node name="mechant1" parent="Chateau !!" unique_id=1636861212 instance=ExtResource("9_l1bo0")]
 position = Vector2(1662, 443)
@@ -229,7 +227,7 @@ rotation = 2.7216053
 scale = Vector2(0.24679524, 0.22263598)
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=1949292143]
-collision_layer = 65527
+collision_layer = 7
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_cmdni")
 
@@ -260,13 +258,14 @@ shape = SubResource("WorldBoundaryShape2D_ggec4")
 position = Vector2(993, 238)
 interval = 0.01
 first_delay = 0.01
-amount = 50
+amount = 100
 
 [node name="Spawner" parent="Spawners" unique_id=1926012024 instance=ExtResource("9_eu5ii")]
 position = Vector2(1763, 946)
 interval = 0.01
 first_delay = 0.01
-amount = 50
+amount = 300
+spread = Vector2(1000, 100)
 
 [node name="Lance TODO" type="Sprite2D" parent="." unique_id=200879763]
 position = Vector2(1798.0001, 382.00003)

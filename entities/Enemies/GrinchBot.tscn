@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ys7f8q6ahefi"]
 
-[ext_resource type="Script" uid="uid://dpkk87g5nm046" path="res://scripts/mechant_1.gd" id="1_xba0d"]
+[ext_resource type="Script" uid="uid://dqc2cyt0dtlcu" path="res://scripts/mechant_1.gd" id="1_xba0d"]
 [ext_resource type="Texture2D" uid="uid://b6n5bggheuqo7" path="res://icon.svg" id="2_5s2gi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0r6sc"]
@@ -10,6 +10,7 @@ friction = 0.0
 radius = 64.12488
 
 [node name="mechant1" type="RigidBody2D" unique_id=1636861212]
+collision_layer = 25
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_0r6sc")
 gravity_scale = 0.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdjyjgbssxc6b"]
 
 [ext_resource type="Script" uid="uid://dqc2cyt0dtlcu" path="res://scripts/mechant_1.gd" id="1_0r6sc"]
-[ext_resource type="Texture2D" uid="uid://b6n5bggheuqo7" path="res://icon.svg" id="1_atksd"]
+[ext_resource type="Texture2D" uid="uid://dhnhp7pq4d100" path="res://assets/corona.png" id="2_x1ugr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0r6sc"]
 friction = 0.0
@@ -10,7 +10,7 @@ friction = 0.0
 radius = 64.12488
 
 [node name="mechant1" type="RigidBody2D" unique_id=1636861212]
-collision_layer = 9
+collision_layer = 25
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_0r6sc")
 gravity_scale = 0.0
@@ -20,8 +20,8 @@ script = ExtResource("1_0r6sc")
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1737081164]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_atksd")
+scale = Vector2(0.021484375, 0.021484377)
+texture = ExtResource("2_x1ugr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323403017]
 scale = Vector2(0.25, 0.25)

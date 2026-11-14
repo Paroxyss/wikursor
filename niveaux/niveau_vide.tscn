@@ -23,7 +23,7 @@ scale = Vector2(5.6608067, 6.01353)
 texture = ExtResource("1_8ok58")
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
-collision_layer = 65527
+collision_layer = 7
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_8ok58")
 

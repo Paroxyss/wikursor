@@ -7,15 +7,31 @@ var isAttacking = false
 var currentApparence : String = "papy"
 enum Abilities {Select, Lance, Grab, Piou}
 var dic : Dictionary = {Abilities.Select : "select", Abilities.Lance : "lance", Abilities.Grab : "grab", Abilities.Piou : "piou"}
-var unlockedAbilities : Array[int] = []
+var unlockedAbilities : Array[int] = [Abilities.Lance]
 var pv : int
 @export var maxPv : int = 20
 
+@export var lance_damage = 1
+
+var heading = 0
+const headingSpeed = 8
+
 func _ready() -> void:
 	pv = maxPv
+	$Apparences/LanceEffectZone.set_block_signals(true)
 
 func _process(delta: float) -> void:
-		
+	var dtheta = heading - $Heading.rotation
+	if dtheta > PI:
+		dtheta -= TAU
+	if dtheta < -PI:
+		dtheta += TAU
+
+	if(dtheta > 0):
+		$Heading.rotation = fmod($Heading.rotation + headingSpeed * delta * abs(dtheta), TAU)
+	if(dtheta < 0):
+		$Heading.rotation = fmod($Heading.rotation - headingSpeed * delta * abs(dtheta), TAU)
+
 	for action in unlockedAbilities:
 		if Input.is_action_just_pressed(dic[action]) and !isAttacking:
 			isAttacking = true
@@ -33,6 +49,8 @@ func _physics_process(delta: float) -> void:
 	 direction_horiz * SPEED,
 	 direction_vert * SPEED
 	)
+	if velocity.length() > 0:
+		heading = velocity.angle()
 
 	move_and_slide()
 
@@ -44,13 +62,36 @@ func set_apparence(name: String):
 	
 func ability(ability: int):
 	if ability == Abilities.Select:
-		print ("select")
+		select()
 	if ability == Abilities.Lance:
-		print("lance")
+		lance()
 	if ability == Abilities.Grab:
 		print("grab")
 	if ability == Abilities.Piou:
 		print("piou")
+
+func select() -> void:
+	$Apparences.rotation = heading
+
+func lance() -> void:
+	print(heading)
+	$Apparences.rotation = heading + deg_to_rad(115)
+	$Apparences/LanceEffectZone.set_block_signals(false)
+	var fat = func fat() -> void:
+		$Apparences/lance_attaque.show()
+		$Apparences/lance.hide()
+		$Heading.hide()
+	var end = func end() -> void:
+		$Apparences/lance_attaque.hide()
+		$Apparences/lance.show()
+		$Apparences/LanceEffectZone.set_block_signals(true)
+		$Apparences.rotation = 0
+	var reload = func reload() -> void:
+		isAttacking = false
+		$Heading.show()
+	schedule(fat, 0.1)
+	schedule(end, 0.4)
+	schedule(reload, 0.5)
 
 
 func damaged(damage : int):
@@ -64,6 +105,18 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 func reset():
 	pv = maxPv
-	unlockedAbilities = []
+	# unlockedAbilities = []
 	isAttacking = false
 	set_apparence("papy")
+
+
+func _on_lance_effect_zone_body_entered(body: Node2D) -> void:
+	body.apply_damage(lance_damage)
+
+func schedule(function_name, delay):
+	var timer = Timer.new()
+	timer.connect("timeout", function_name)
+	timer.connect("timeout", timer.queue_free)
+	timer.wait_time = delay
+	get_tree().root.add_child(timer)
+	timer.start()

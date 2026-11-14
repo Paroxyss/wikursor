@@ -19,7 +19,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbyin"]
-radius = 218.44908
+radius = 255.08481
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe0cj"]
 size = Vector2(921.125, 120.69922)
@@ -35,7 +35,7 @@ scale = Vector2(0.7927756, 0.84217304)
 texture = ExtResource("2_shev2")
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
-collision_layer = 65527
+collision_layer = 7
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_8ok58")
 
@@ -83,7 +83,7 @@ spread = Vector2(0, 0)
 [node name="Area2D" type="Area2D" parent="PresenceSpawner" unique_id=1633689033]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PresenceSpawner/Area2D" unique_id=186938347]
-scale = Vector2(0.7697971, 2.108327)
+scale = Vector2(0.59268403, 0.60659593)
 shape = SubResource("CircleShape2D_xbyin")
 
 [node name="PresenceSpawner2" parent="." unique_id=1296443757 node_paths=PackedStringArray("collision") instance=ExtResource("11_mddl2")]

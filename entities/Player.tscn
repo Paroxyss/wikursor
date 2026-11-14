@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dsa5ckogqqd8x" path="res://assets/cursors/Pan.png" id="4_a1f57"]
 [ext_resource type="Texture2D" uid="uid://dmpi1oenfl0ah" path="res://assets/cursors/Link.png" id="5_25mxy"]
 [ext_resource type="Texture2D" uid="uid://dt8hq4c8r2f5c" path="res://assets/cursors/Text.png" id="6_dv4ir"]
+[ext_resource type="Texture2D" uid="uid://4tmxlk2rlgdw" path="res://assets/cursors/Handwriting.png" id="7_25mxy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xbyin"]
 radius = 40.0
 height = 122.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_il652"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ngp1m"]
 radius = 52.664074
@@ -34,9 +37,15 @@ scale = Vector2(0.5194805, 0.51948047)
 texture = ExtResource("2_lw5ub")
 
 [node name="lance" type="Sprite2D" parent="Apparences" unique_id=1247666660]
-visible = false
 position = Vector2(35.714287, 17.857141)
 scale = Vector2(0.574, 0.574)
+texture = ExtResource("3_lw5ub")
+
+[node name="lance_attaque" type="Sprite2D" parent="Apparences" unique_id=9140899]
+visible = false
+position = Vector2(-7.1428623, -71.42858)
+rotation = -0.335315
+scale = Vector2(0.42984417, 1.7789795)
 texture = ExtResource("3_lw5ub")
 
 [node name="grab" type="Sprite2D" parent="Apparences" unique_id=759611502]
@@ -57,6 +66,18 @@ position = Vector2(0, -2.842171e-14)
 scale = Vector2(0.57449776, 0.55702674)
 texture = ExtResource("6_dv4ir")
 
+[node name="LanceEffectZone" type="Area2D" parent="Apparences" unique_id=2142235648]
+rotation = -0.43633235
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apparences/LanceEffectZone" unique_id=1102233219]
+rotation = 3.1415927
+scale = Vector2(10, 30)
+shape = SubResource("SegmentShape2D_il652")
+debug_color = Color(0.97245485, 0, 0.44423476, 0.41960785)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=814363922]
 collision_layer = 0
 collision_mask = 8
@@ -65,4 +86,14 @@ collision_mask = 8
 rotation = -0.47023717
 shape = SubResource("CapsuleShape2D_ngp1m")
 
+[node name="Heading" type="Node2D" parent="." unique_id=1973702304]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Heading" unique_id=1483970308]
+position = Vector2(85.714294, 0)
+rotation = 3.9269907
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_25mxy")
+
+[connection signal="body_entered" from="Apparences/LanceEffectZone" to="." method="_on_lance_effect_zone_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
