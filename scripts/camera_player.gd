@@ -17,4 +17,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position = player.position
-	# position = position.clamp(cam_viewport_radius, niv_viewport - cam_viewport_radius)
+	position = position.clamp(cam_viewport_radius, niv_viewport - cam_viewport_radius)
