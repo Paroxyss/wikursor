@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cdjyjgbssxc6b"]
+
+[ext_resource type="Script" uid="uid://dpkk87g5nm046" path="res://scripts/mechant_1.gd" id="1_0r6sc"]
+[ext_resource type="Texture2D" uid="uid://b6n5bggheuqo7" path="res://icon.svg" id="1_atksd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
+size = Vector2(128, 128)
+
+[node name="mechant1" type="CharacterBody2D" unique_id=1895046397]
+script = ExtResource("1_0r6sc")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1737081164]
+texture = ExtResource("1_atksd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323403017]
+shape = SubResource("RectangleShape2D_xbyin")
+debug_color = Color(0, 0.57307506, 0.83513063, 0.41960785)
