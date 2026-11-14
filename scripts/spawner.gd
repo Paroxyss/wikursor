@@ -4,20 +4,30 @@ class_name Spawner extends Node2D
 @export var interval : float = 1
 @export var first_delay : float = 0.5
 @export var amount : int = -1
+var amount_spawned : int = 0
 
 var player : CharacterBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	reset()
+
+func reset():
 	$Interval.stop()
 	$Interval.wait_time = interval
 	$FirstDelay.wait_time = first_delay
 	$FirstDelay.start()
 
+
+func stop():
+	$FirstDelay.stop()
+	$Interval.stop()
+	
+
 func _on_interval_timeout() -> void:
-	if(amount == 0):
+	if(amount == amount_spawned):
 		$Interval.stop()
 		return
-	amount -= 1
+	amount_spawned += 1
 	var instance : Enemy = enemy.instantiate()
 	instance.target = player
 	add_child(instance)
