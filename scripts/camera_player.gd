@@ -1,9 +1,7 @@
-extends Camera2D
+class_name Player_Camera extends Camera2D
 
-@onready
-var player: CharacterBody2D = get_node("../Player")
-@onready
-var niveau: Node2D = get_node("../Niveau 0")
+var player: CharacterBody2D
+var niveau: Node2D
 @onready
 var niv_viewport: Vector2 = niveau.size
 @onready

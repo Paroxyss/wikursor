@@ -10,7 +10,7 @@ friction = 0.0
 radius = 64.12488
 
 [node name="mechant1" type="RigidBody2D" unique_id=1636861212]
-mass = 0.1
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_0r6sc")
 gravity_scale = 0.0
 lock_rotation = true
@@ -19,10 +19,10 @@ script = ExtResource("1_wikhv")
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1737081164]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_u4l7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323403017]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_qh1oc")
 debug_color = Color(0, 0.57307506, 0.83513063, 0.41960785)

@@ -1,24 +1,15 @@
 [gd_scene format=3 uid="uid://bbw1fc4c1mfts"]
 
 [ext_resource type="PackedScene" uid="uid://uckhiwf2f81w" path="res://entities/Game_Manager.tscn" id="1_nqcu4"]
-[ext_resource type="PackedScene" uid="uid://bbkygvqw7gatn" path="res://niveaux/niveau_0.tscn" id="2_d11us"]
+[ext_resource type="Script" uid="uid://duepqxc8hru4q" path="res://scripts/camera_player.gd" id="3_38hfo"]
 [ext_resource type="PackedScene" uid="uid://dxivgcn6ag7tx" path="res://entities/Player.tscn" id="3_qaf17"]
-[ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="4_e5wc5"]
 
 [node name="Node2D" type="Node2D" unique_id=925837085]
 
-[node name="GameManager" parent="." unique_id=1472408121 node_paths=PackedStringArray("player") instance=ExtResource("1_nqcu4")]
-player = NodePath("Player")
+[node name="GameManager" parent="." unique_id=1472408121 instance=ExtResource("1_nqcu4")]
 
-[node name="Niveau" parent="GameManager" unique_id=2042643648 node_paths=PackedStringArray("spawnList") instance=ExtResource("2_d11us")]
-spawnList = [NodePath("../Spawner"), NodePath("../Spawner2")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1272690756]
+script = ExtResource("3_38hfo")
 
-[node name="Player" parent="GameManager" unique_id=1651288996 instance=ExtResource("3_qaf17")]
-
-[node name="Spawner" parent="GameManager" unique_id=2013283453 instance=ExtResource("4_e5wc5")]
-position = Vector2(354, 314)
-timer = 1.0
-
-[node name="Spawner2" parent="GameManager" unique_id=847060338 instance=ExtResource("4_e5wc5")]
-position = Vector2(1128, 955)
-timer = 2.0
+[node name="Player" parent="." unique_id=1651288996 instance=ExtResource("3_qaf17")]
+z_index = 1
