@@ -10,6 +10,7 @@ func _ready() -> void:
 	player = playerFile.instantiate()
 	add_child(player)
 	niveau = levelList[0].instantiate()
+	niveau.player = player
 	add_child(niveau)
 	setup_level()
 	camera = cameraFile.instantiate()

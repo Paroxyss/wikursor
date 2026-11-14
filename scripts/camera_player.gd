@@ -3,8 +3,8 @@ class_name Player_Camera extends Camera2D
 var player: CharacterBody2D
 var niveau: Node2D
 
-# @onready
-# var niv_viewport: Vector2 = niveau.size
+@onready
+var niv_viewport: Vector2 = niveau.size
 @onready
 var cam_viewport_radius = self.get_viewport_rect().size / 2 / self.zoom
 
