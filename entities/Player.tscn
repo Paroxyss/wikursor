@@ -34,20 +34,8 @@ scale = Vector2(0.5194805, 0.51948047)
 texture = ExtResource("2_lw5ub")
 
 [node name="lance" type="Sprite2D" parent="Apparences" unique_id=1247666660]
-visible = false
-position = Vector2(1.9999988, 0)
-scale = Vector2(0.124945395, 0.124945395)
-texture = ExtResource("3_ks8m5")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=814363922]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=353764228]
-rotation = -0.47023717
-shape = SubResource("CapsuleShape2D_ngp1m")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-position = Vector2(39.28571, 17.857143)
-scale = Vector2(0.57449776, 0.55702674)
+position = Vector2(35.714287, 17.857141)
+scale = Vector2(0.574, 0.574)
 texture = ExtResource("3_lw5ub")
 
 [node name="grab" type="Sprite2D" parent="Apparences" unique_id=759611502]
@@ -67,3 +55,11 @@ visible = false
 position = Vector2(0, -2.842171e-14)
 scale = Vector2(0.57449776, 0.55702674)
 texture = ExtResource("6_dv4ir")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=814363922]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=353764228]
+rotation = -0.47023717
+shape = SubResource("CapsuleShape2D_ngp1m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
