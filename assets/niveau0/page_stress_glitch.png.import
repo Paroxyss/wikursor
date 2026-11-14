@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1y1shss5xen6"
-path="res://.godot/imported/papy-cursor.png-47fb8e173c815dccd8d8bf539ac81c26.ctex"
+uid="uid://cvm446g5774v3"
+path="res://.godot/imported/page_stress_glitch.png-b756bfc08a06ee243c3ad4f643e2973a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/papy-cursor.png"
-dest_files=["res://.godot/imported/papy-cursor.png-47fb8e173c815dccd8d8bf539ac81c26.ctex"]
+source_file="res://assets/niveau0/page_stress_glitch.png"
+dest_files=["res://.godot/imported/page_stress_glitch.png-b756bfc08a06ee243c3ad4f643e2973a.ctex"]
 
 [params]
 

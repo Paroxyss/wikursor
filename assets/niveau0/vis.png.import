@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q53r1otva341"
-path="res://.godot/imported/lance-cursor.png-11836f4a9e16e2db4a5b7ea64f15d500.ctex"
+uid="uid://c0v6re42hg6u5"
+path="res://.godot/imported/vis.png-1a0279f343c414eefb5e4af95b3fda9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lance-cursor.png"
-dest_files=["res://.godot/imported/lance-cursor.png-11836f4a9e16e2db4a5b7ea64f15d500.ctex"]
+source_file="res://assets/niveau0/vis.png"
+dest_files=["res://.godot/imported/vis.png-1a0279f343c414eefb5e4af95b3fda9e.ctex"]
 
 [params]
 

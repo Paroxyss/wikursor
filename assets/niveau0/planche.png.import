@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy26arq3aeccm"
-path="res://.godot/imported/cursor-character-broken-leg-isolated-white-background-d-illustration-166275480 Background Removed.png-89546f30f1e999e0e40770b9de326720.ctex"
+uid="uid://dwl6j44irdcxd"
+path="res://.godot/imported/planche.png-f2bff67b2036d67a7373cf9d8ab1d398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cursor-character-broken-leg-isolated-white-background-d-illustration-166275480 Background Removed.png"
-dest_files=["res://.godot/imported/cursor-character-broken-leg-isolated-white-background-d-illustration-166275480 Background Removed.png-89546f30f1e999e0e40770b9de326720.ctex"]
+source_file="res://assets/niveau0/planche.png"
+dest_files=["res://.godot/imported/planche.png-f2bff67b2036d67a7373cf9d8ab1d398.ctex"]
 
 [params]
 

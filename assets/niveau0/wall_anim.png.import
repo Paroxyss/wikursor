@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4r77jd52yuvf"
-path="res://.godot/imported/page_stress.png-b47543b18fa65bd56f03586c96f845cf.ctex"
+uid="uid://b0avgsrw428ao"
+path="res://.godot/imported/wall_anim.png-633a75357341c39bcbaf4db190769f16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/page_stress.png"
-dest_files=["res://.godot/imported/page_stress.png-b47543b18fa65bd56f03586c96f845cf.ctex"]
+source_file="res://assets/niveau0/wall_anim.png"
+dest_files=["res://.godot/imported/wall_anim.png-633a75357341c39bcbaf4db190769f16.ctex"]
 
 [params]
 

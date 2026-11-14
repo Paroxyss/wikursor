@@ -1,19 +1,24 @@
 [gd_scene format=3 uid="uid://bbkygvqw7gatn"]
 
-[ext_resource type="Texture2D" uid="uid://b4r77jd52yuvf" path="res://assets/page_stress.png" id="1_d24vj"]
+[ext_resource type="Texture2D" uid="uid://b4r77jd52yuvf" path="res://assets/niveau0/page_stress.png" id="1_d24vj"]
 [ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_xiyxc"]
 [ext_resource type="PackedScene" uid="uid://c6yk3bjxbwf03" path="res://entities/planche.tscn" id="3_ug840"]
-[ext_resource type="Texture2D" uid="uid://cvm446g5774v3" path="res://assets/page_stress_glitch.png" id="4_1g3b1"]
+[ext_resource type="Texture2D" uid="uid://cvm446g5774v3" path="res://assets/niveau0/page_stress_glitch.png" id="4_1g3b1"]
 [ext_resource type="PackedScene" uid="uid://do26tevcpnqvr" path="res://entities/wall.tscn" id="4_l1ssp"]
-[ext_resource type="Texture2D" uid="uid://hux05tuqlu1j" path="res://assets/glitch-mask.png" id="5_aysjc"]
+[ext_resource type="Texture2D" uid="uid://hux05tuqlu1j" path="res://assets/niveau0/glitch-mask.png" id="5_aysjc"]
 [ext_resource type="Script" uid="uid://e2gn2gmfarv8" path="res://scripts/glitch_mask_movement.gd" id="6_c1wh5"]
 [ext_resource type="PackedScene" uid="uid://b7wb4s40vsw0n" path="res://entities/planche_physique.tscn" id="8_c1wh5"]
 [ext_resource type="Script" uid="uid://d2hi2hxqd1wwq" path="res://scripts/niv0_passage_planches.gd" id="8_cmdni"]
 [ext_resource type="PackedScene" uid="uid://ly5pnyawof8v" path="res://entities/presence_spawner.tscn" id="10_ax445"]
-[ext_resource type="Texture2D" uid="uid://c0v6re42hg6u5" path="res://assets/vis.png" id="11_0c7qs"]
+[ext_resource type="Texture2D" uid="uid://c0v6re42hg6u5" path="res://assets/niveau0/vis.png" id="11_0c7qs"]
 [ext_resource type="PackedScene" uid="uid://cdjyjgbssxc6b" path="res://entities/Enemies/mechant1.tscn" id="11_bum3b"]
 [ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="12_bum3b"]
 [ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="13_82cpv"]
+[ext_resource type="Texture2D" uid="uid://bypllq4jvjefu" path="res://assets/niveau0/LienNiv0ModifCode.png" id="15_xfngk"]
+[ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="16_o0dhu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
+size = Vector2(921.125, 120.69922)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e44y8"]
 blend_mode = 3
@@ -35,6 +40,18 @@ position = Vector2(1184.0186, 732)
 scale = Vector2(0.7956866, 0.8452656)
 texture = ExtResource("1_d24vj")
 metadata/_edit_lock_ = true
+
+[node name="LienNiv0ModifCode" type="Sprite2D" parent="." unique_id=128667712]
+position = Vector2(749, 1017)
+scale = Vector2(0.31483245, 0.31483245)
+texture = ExtResource("15_xfngk")
+script = ExtResource("16_o0dhu")
+
+[node name="Area2D" type="Area2D" parent="LienNiv0ModifCode" unique_id=1260616638]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LienNiv0ModifCode/Area2D" unique_id=1661470497]
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_xbyin")
 
 [node name="Chateau !!" type="Node2D" parent="." unique_id=1613607956]
 
@@ -294,9 +311,9 @@ position = Vector2(1605, 1431)
 collision = NodePath("../Vague chateau PT1/Area2D")
 enemy = ExtResource("11_bum3b")
 interval = 0.03
-first_delay = 5.0
+first_delay = 4.0
 amount = 50
-spread = Vector2(300, 0)
+spread = Vector2(500, 0)
 
 [node name="Lance TODO" type="Sprite2D" parent="." unique_id=200879763]
 position = Vector2(1798.0001, 382.00003)
@@ -340,4 +357,6 @@ node_a = NodePath("../PlanchePhysique2")
 node_b = NodePath("../../World Bounds")
 
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=610043839]
-position = Vector2(122, 110)
+position = Vector2(77, 70)
+
+[connection signal="body_entered" from="LienNiv0ModifCode/Area2D" to="." method="_on_area_2d_body_entered"]

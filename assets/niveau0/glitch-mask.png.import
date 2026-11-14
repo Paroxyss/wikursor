@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0v6re42hg6u5"
-path="res://.godot/imported/vis.png-b23ff6b9af00920256fab69714c0ba79.ctex"
+uid="uid://hux05tuqlu1j"
+path="res://.godot/imported/glitch-mask.png-5541ab6cfc0b0a338d33b2f8d140f9a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vis.png"
-dest_files=["res://.godot/imported/vis.png-b23ff6b9af00920256fab69714c0ba79.ctex"]
+source_file="res://assets/niveau0/glitch-mask.png"
+dest_files=["res://.godot/imported/glitch-mask.png-5541ab6cfc0b0a338d33b2f8d140f9a0.ctex"]
 
 [params]
 

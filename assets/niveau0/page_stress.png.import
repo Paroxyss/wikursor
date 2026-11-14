@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvm446g5774v3"
-path="res://.godot/imported/page_stress_glitch.png-760a49fe0aaa8fabe6902535a1f76aa0.ctex"
+uid="uid://b4r77jd52yuvf"
+path="res://.godot/imported/page_stress.png-d649df7852d182418191f84d89d9a54d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/page_stress_glitch.png"
-dest_files=["res://.godot/imported/page_stress_glitch.png-760a49fe0aaa8fabe6902535a1f76aa0.ctex"]
+source_file="res://assets/niveau0/page_stress.png"
+dest_files=["res://.godot/imported/page_stress.png-d649df7852d182418191f84d89d9a54d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwl6j44irdcxd"
-path="res://.godot/imported/planche.png-c08cc9f0f0d5b582f1aa0561bd0a39d8.ctex"
+uid="uid://q53r1otva341"
+path="res://.godot/imported/lance-cursor.png-6dabba8c0013e17ee31e8e2cf722ff8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/planche.png"
-dest_files=["res://.godot/imported/planche.png-c08cc9f0f0d5b582f1aa0561bd0a39d8.ctex"]
+source_file="res://assets/niveau0/lance-cursor.png"
+dest_files=["res://.godot/imported/lance-cursor.png-6dabba8c0013e17ee31e8e2cf722ff8e.ctex"]
 
 [params]
 

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://biw8o7au1iy5v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ho77i"]
+load_path = "res://.godot/imported/page_stress.png-b47543b18fa65bd56f03586c96f845cf.ctex"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbwlo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rce7w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_exxot"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
+
+[node name="Niveau Vide" type="Node2D" unique_id=383967567]
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=972025712]
+position = Vector2(1184.0186, 732)
+scale = Vector2(0.7956866, 0.8452656)
+texture = SubResource("CompressedTexture2D_ho77i")
+metadata/_edit_lock_ = true
+
+[node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
+collision_layer = 65535
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_8ok58")
+
+[node name="Bottom" type="CollisionShape2D" parent="World Bounds" unique_id=1850367706]
+position = Vector2(104, 1465)
+rotation = -3.1415925
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_cbwlo")
+
+[node name="Right" type="CollisionShape2D" parent="World Bounds" unique_id=394839497]
+position = Vector2(2369, 104)
+rotation = -1.5707963
+shape = SubResource("WorldBoundaryShape2D_rce7w")
+
+[node name="Left" type="CollisionShape2D" parent="World Bounds" unique_id=709563518]
+position = Vector2(0, 104)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_exxot")
+
+[node name="Top" type="CollisionShape2D" parent="World Bounds" unique_id=442268058]
+position = Vector2(104, 0)
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_mxr4r")
+
+[node name="Spawners" type="Node2D" parent="." unique_id=299839190]
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
+position = Vector2(77, 70)
