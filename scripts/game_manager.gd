@@ -17,6 +17,7 @@ func _ready() -> void:
 	camera = cameraFile.instantiate()
 	camera.niveau = niveau
 	camera.player = player
+	camera.zoom = Vector2(2, 2)
 	add_child(camera)
 	pass # Replace with function body.
 

@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b5wvojtq22blq" path="res://scripts/player_controller.gd" id="1_ngn6a"]
 [ext_resource type="Texture2D" uid="uid://1y1shss5xen6" path="res://assets/papy-cursor.png" id="2_lw5ub"]
-[ext_resource type="Texture2D" uid="uid://q53r1otva341" path="res://assets/lance-cursor.png" id="3_ks8m5"]
+[ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="3_lw5ub"]
+[ext_resource type="Texture2D" uid="uid://dsa5ckogqqd8x" path="res://assets/cursors/Pan.png" id="4_a1f57"]
+[ext_resource type="Texture2D" uid="uid://dmpi1oenfl0ah" path="res://assets/cursors/Link.png" id="5_25mxy"]
+[ext_resource type="Texture2D" uid="uid://dt8hq4c8r2f5c" path="res://assets/cursors/Text.png" id="6_dv4ir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xbyin"]
 radius = 40.0
@@ -43,3 +46,24 @@ rotation = -0.47023717
 shape = SubResource("CapsuleShape2D_ngp1m")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+position = Vector2(39.28571, 17.857143)
+scale = Vector2(0.57449776, 0.55702674)
+texture = ExtResource("3_lw5ub")
+
+[node name="grab" type="Sprite2D" parent="Apparences" unique_id=759611502]
+visible = false
+position = Vector2(10.714283, 10.714287)
+scale = Vector2(0.57449776, 0.55702674)
+texture = ExtResource("4_a1f57")
+
+[node name="piou" type="Sprite2D" parent="Apparences" unique_id=291955350]
+visible = false
+position = Vector2(10.714283, 10.714287)
+scale = Vector2(0.57449776, 0.55702674)
+texture = ExtResource("5_25mxy")
+
+[node name="select" type="Sprite2D" parent="Apparences" unique_id=380492261]
+visible = false
+position = Vector2(0, -2.842171e-14)
+scale = Vector2(0.57449776, 0.55702674)
+texture = ExtResource("6_dv4ir")

@@ -8,7 +8,6 @@ script = ExtResource("1_dw3g1")
 enemy = ExtResource("2_xqsf3")
 
 [node name="Interval" type="Timer" parent="." unique_id=552897880]
-autostart = true
 
 [node name="FirstDelay" type="Timer" parent="." unique_id=162688583]
 wait_time = 0.5
