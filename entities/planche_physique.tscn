@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b7wb4s40vsw0n"]
+
+[ext_resource type="Texture2D" uid="uid://dwl6j44irdcxd" path="res://assets/planche.png" id="1_uerb5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c1wh5"]
+radius = 116.64642
+height = 665.57074
+
+[node name="PlanchePhysique" type="RigidBody2D" unique_id=791614214]
+
+[node name="Planche" type="Sprite2D" parent="." unique_id=2007396486]
+scale = Vector2(0.29147917, 0.29147917)
+texture = ExtResource("1_uerb5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980893180]
+rotation = 1.5707964
+scale = Vector2(0.29147917, 0.29147917)
+shape = SubResource("CapsuleShape2D_c1wh5")
+metadata/_edit_group_ = true
