@@ -13,6 +13,7 @@ func _ready() -> void:
 	niveau = levelList[index_niveau].instantiate()
 	player = playerFile.instantiate()
 	setup_level()
+	player.gameover.connect(_on_game_over)
 	pass # Replace with function body.
 
 
@@ -46,3 +47,10 @@ func _on_next_level() -> void:
 	niveau.free.call_deferred()
 	niveau = levelList[index_niveau].instantiate()
 	setup_level.call_deferred()
+
+func _on_game_over():
+	player.reset()
+	niveau.free.call_deferred()
+	niveau = levelList[index_niveau].instantiate()
+	setup_level.call_deferred()
+	

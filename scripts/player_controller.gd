@@ -1,15 +1,18 @@
 extends CharacterBody2D
 
-
+signal gameover
 @export var PUSH_FORCE = 300
 @export var SPEED = 300.0
 var isAttacking = false
 var currentApparence : String = "papy"
 enum Abilities {Select, Lance, Grab, Piou}
 var dic : Dictionary = {Abilities.Select : "select", Abilities.Lance : "lance", Abilities.Grab : "grab", Abilities.Piou : "piou"}
-var unlockedAbilities : Array[int] = [Abilities.Lance]
+var unlockedAbilities : Array[int] = []
 var pv : int
 @export var maxPv : int = 20
+
+func _ready() -> void:
+	pv = maxPv
 
 func _process(delta: float) -> void:
 		
@@ -54,9 +57,13 @@ func damaged(damage : int):
 	pv -= damage
 	if pv <= 0:
 		print("GameOver")
+		gameover.emit()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("aie")
-	print(body)
 	damaged(body.damage)
-		
+	
+func reset():
+	pv = maxPv
+	unlockedAbilities = []
+	isAttacking = false
+	set_apparence("papy")
