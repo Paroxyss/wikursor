@@ -4,6 +4,7 @@ class_name Spawner extends Node2D
 @export var interval : float = 1
 @export var first_delay : float = 0.5
 @export var amount : int = -1
+@export var spread : Vector2 = Vector2(100, 100)
 var amount_spawned : int = 0
 
 var player : CharacterBody2D
@@ -30,6 +31,10 @@ func _on_interval_timeout() -> void:
 	amount_spawned += 1
 	var instance : Enemy = enemy.instantiate()
 	instance.target = player
+	instance.position += Vector2(
+		randf() * spread.x,
+		randf() * spread.y
+	) - spread / 2
 	add_child(instance)
 
 

@@ -1,6 +1,6 @@
 class_name Enemy extends RigidBody2D
 
-const SPEED = 60.0
+const SPEED = 40.0
 
 @export
 var target: CharacterBody2D

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ly5pnyawof8v"]
+
+[ext_resource type="Script" uid="uid://duf7wa434p6ua" path="res://scripts/presence_spawner.gd" id="1_meb4e"]
+
+[node name="PresenceSpawner" type="Node2D" unique_id=1914830697]
+script = ExtResource("1_meb4e")
+
+[node name="Interval" type="Timer" parent="." unique_id=310100317]
+
+[node name="FirstDelay" type="Timer" parent="." unique_id=1165249448]
+one_shot = true
+
+[connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]
+[connection signal="timeout" from="FirstDelay" to="." method="_on_first_delay_timeout"]

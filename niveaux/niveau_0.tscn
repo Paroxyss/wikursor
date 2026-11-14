@@ -9,8 +9,11 @@
 [ext_resource type="Script" uid="uid://e2gn2gmfarv8" path="res://scripts/glitch_mask_movement.gd" id="6_c1wh5"]
 [ext_resource type="PackedScene" uid="uid://b7wb4s40vsw0n" path="res://entities/planche_physique.tscn" id="8_c1wh5"]
 [ext_resource type="Script" uid="uid://d2hi2hxqd1wwq" path="res://scripts/niv0_passage_planches.gd" id="8_cmdni"]
-[ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="10_ax445"]
-[ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="11_bum3b"]
+[ext_resource type="PackedScene" uid="uid://ly5pnyawof8v" path="res://entities/presence_spawner.tscn" id="10_ax445"]
+[ext_resource type="Texture2D" uid="uid://c0v6re42hg6u5" path="res://assets/vis.png" id="11_0c7qs"]
+[ext_resource type="PackedScene" uid="uid://cdjyjgbssxc6b" path="res://entities/Enemies/mechant1.tscn" id="11_bum3b"]
+[ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="12_bum3b"]
+[ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="13_82cpv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e44y8"]
 blend_mode = 3
@@ -19,10 +22,13 @@ blend_mode = 3
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggec4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e44y8"]
+size = Vector2(549.5, 444.5)
+
 [node name="Niveau 0" type="Node2D" unique_id=2042643648 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_xiyxc")
-playerSpawn = NodePath("playerspawn")
-spawnList = [NodePath("Spawner")]
+playerSpawn = NodePath("PlayerSpawn")
+spawnList = [NodePath("Spawners/Vague chateau PT1"), NodePath("Spawners/Vague chateau PT2"), NodePath("Spawners/Vague chateau PT3")]
 
 [node name="Fond" type="Sprite2D" parent="." unique_id=1635559790]
 position = Vector2(1184.0186, 732)
@@ -37,9 +43,10 @@ position = Vector2(1184, 732.75)
 scale = Vector2(1.2333333, 1.3093107)
 
 [node name="PageStressGlitch" type="Sprite2D" parent="Chateau !!/CanvasGroup" unique_id=851021743]
-position = Vector2(20.270248, 4.773487)
+position = Vector2(26.756735, 4.773487)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_1g3b1")
+metadata/_edit_lock_ = true
 
 [node name="GlitchMask" type="Sprite2D" parent="Chateau !!/CanvasGroup" unique_id=468754357]
 material = SubResource("CanvasItemMaterial_e44y8")
@@ -55,6 +62,16 @@ rotation = 0.38202858
 [node name="Wall2" parent="Chateau !!" unique_id=528834637 instance=ExtResource("4_l1ssp")]
 position = Vector2(1471, 127.00006)
 rotation = 1.0294819
+
+[node name="Garde1" parent="Chateau !!" unique_id=1636861212 instance=ExtResource("12_bum3b")]
+position = Vector2(1661, 431)
+freeze = true
+script = null
+
+[node name="Garde2" parent="Chateau !!" unique_id=55992888 instance=ExtResource("12_bum3b")]
+position = Vector2(1760, 491)
+freeze = true
+script = null
 
 [node name="Planches" type="Node2D" parent="." unique_id=893924560]
 
@@ -128,6 +145,11 @@ position = Vector2(1203.0001, 316.99997)
 rotation = -0.29702488
 scale = Vector2(0.25381166, 0.23029928)
 
+[node name="StaticBody2D32" parent="Planches" unique_id=1068870424 instance=ExtResource("3_ug840")]
+position = Vector2(1418.0001, 233.99997)
+rotation = -0.29702488
+scale = Vector2(0.25381166, 0.23029928)
+
 [node name="StaticBody2D17" parent="Planches" unique_id=1426843685 instance=ExtResource("3_ug840")]
 position = Vector2(753.00006, 448)
 rotation = 0.2590695
@@ -188,6 +210,31 @@ position = Vector2(1559, 866.0001)
 rotation = 2.7224011
 scale = Vector2(0.33578256, 0.30291218)
 
+[node name="StaticBody2D25" parent="Planches" unique_id=1155346103 instance=ExtResource("3_ug840")]
+position = Vector2(1654, 1078)
+rotation = 3.0275667
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D28" parent="Planches" unique_id=1042912527 instance=ExtResource("3_ug840")]
+position = Vector2(1742.0001, 1088)
+rotation = 3.0275667
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D29" parent="Planches" unique_id=755133151 instance=ExtResource("3_ug840")]
+position = Vector2(1593, 1170.0001)
+rotation = 3.3070138
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D30" parent="Planches" unique_id=745732770 instance=ExtResource("3_ug840")]
+position = Vector2(1384.0002, 1127.0001)
+rotation = 2.8658676
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D31" parent="Planches" unique_id=597925689 instance=ExtResource("3_ug840")]
+position = Vector2(1359, 1286.9999)
+rotation = 2.7216053
+scale = Vector2(0.24679524, 0.22263598)
+
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=1949292143]
 collision_layer = 65535
 collision_mask = 0
@@ -214,6 +261,46 @@ position = Vector2(104, 0)
 scale = Vector2(-1, -1)
 shape = SubResource("WorldBoundaryShape2D_ggec4")
 
+[node name="Spawners" type="Node2D" parent="." unique_id=1139853821]
+
+[node name="Vague chateau PT1" parent="Spawners" unique_id=1914830697 node_paths=PackedStringArray("collision") instance=ExtResource("10_ax445")]
+position = Vector2(1193, 116)
+collision = NodePath("Area2D")
+enemy = ExtResource("11_bum3b")
+interval = 0.01
+first_delay = 3.0
+amount = 50
+
+[node name="Area2D" type="Area2D" parent="Spawners/Vague chateau PT1" unique_id=1980775527]
+position = Vector2(-21, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/Vague chateau PT1/Area2D" unique_id=1446024903]
+position = Vector2(449.25, 543.75)
+shape = SubResource("RectangleShape2D_e44y8")
+
+[node name="Vague chateau PT2" parent="Spawners" unique_id=1622061508 node_paths=PackedStringArray("collision") instance=ExtResource("10_ax445")]
+position = Vector2(2332, 1089)
+collision = NodePath("../Vague chateau PT1/Area2D")
+enemy = ExtResource("11_bum3b")
+interval = 0.03
+first_delay = 3.0
+amount = 50
+spread = Vector2(0, 600)
+
+[node name="Vague chateau PT3" parent="Spawners" unique_id=477494130 node_paths=PackedStringArray("collision") instance=ExtResource("10_ax445")]
+position = Vector2(1605, 1431)
+collision = NodePath("../Vague chateau PT1/Area2D")
+enemy = ExtResource("11_bum3b")
+interval = 0.03
+first_delay = 5.0
+amount = 50
+spread = Vector2(300, 0)
+
+[node name="Lance TODO" type="Sprite2D" parent="." unique_id=200879763]
+position = Vector2(1798.0001, 382.00003)
+scale = Vector2(0.21829581, 0.21829581)
+texture = ExtResource("13_82cpv")
+
 [node name="LePassage( tain tain tainnnn)" type="Node2D" parent="." unique_id=1227762194]
 position = Vector2(763, 1062)
 script = ExtResource("8_cmdni")
@@ -235,17 +322,20 @@ collision_layer = 65535
 collision_mask = 3
 freeze = true
 
+[node name="Vis" type="Sprite2D" parent="LePassage( tain tain tainnnn)" unique_id=145380984]
+position = Vector2(-181, -48)
+scale = Vector2(0.103341565, 0.103341565)
+texture = ExtResource("11_0c7qs")
+
+[node name="Vis2" type="Sprite2D" parent="LePassage( tain tain tainnnn)" unique_id=1265148608]
+position = Vector2(171, -48)
+scale = Vector2(0.10334156, 0.10334156)
+texture = ExtResource("11_0c7qs")
+
 [node name="PinJoint2D2" type="PinJoint2D" parent="LePassage( tain tain tainnnn)" unique_id=1834248687]
 position = Vector2(171, -48)
 node_a = NodePath("../PlanchePhysique2")
 node_b = NodePath("../../World Bounds")
 
-[node name="Spawner" parent="." unique_id=2013283453 instance=ExtResource("10_ax445")]
-position = Vector2(1769, 405)
-enemy = ExtResource("11_bum3b")
-interval = 0.01
-first_delay = 2.0
-amount = 100
-
-[node name="playerspawn" type="Node2D" parent="." unique_id=1106730830]
-position = Vector2(1051, 702)
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=610043839]
+position = Vector2(122, 110)
