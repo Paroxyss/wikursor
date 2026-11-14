@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://boakm0ei7aaqi"]
+
+[ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_ff1s2"]
+[ext_resource type="Texture2D" uid="uid://c4joqkdmk3r60" path="res://assets/cat-cat-dance/cat-cat-dance-1 (dragged).png" id="2_yd6pe"]
+[ext_resource type="Texture2D" uid="uid://dq2ivixjgh2" path="res://assets/cat-cat-dance/cat-cat-dance-2 (dragged).png" id="3_qomgd"]
+[ext_resource type="Texture2D" uid="uid://c3khw2g7n5io7" path="res://assets/cat-cat-dance/cat-cat-dance-3 (dragged).png" id="4_g3xpj"]
+[ext_resource type="Texture2D" uid="uid://bkhedhxdagi65" path="res://assets/cat-cat-dance/cat-cat-dance-4 (dragged).png" id="5_najag"]
+[ext_resource type="Texture2D" uid="uid://b5gujt88vyfd0" path="res://assets/cat-cat-dance/cat-cat-dance-5 (dragged).png" id="6_xwffv"]
+[ext_resource type="Texture2D" uid="uid://b03hi631xu2th" path="res://assets/cat-cat-dance/cat-cat-dance-6 (dragged).png" id="7_m1ste"]
+[ext_resource type="Texture2D" uid="uid://ycasyyija1w7" path="res://assets/cat-cat-dance/cat-cat-dance-7 (dragged).png" id="8_bjh21"]
+[ext_resource type="Texture2D" uid="uid://cv6skvtq4wsh3" path="res://assets/cat-cat-dance/cat-cat-dance-8 (dragged).png" id="9_rea6x"]
+[ext_resource type="Texture2D" uid="uid://bkba2oxr7dpwh" path="res://assets/cat-cat-dance/cat-cat-dance-9 (dragged).png" id="10_neofg"]
+[ext_resource type="Texture2D" uid="uid://d2cb2irq3oadm" path="res://assets/cat-cat-dance/cat-cat-dance-10 (dragged).png" id="11_hk76v"]
+[ext_resource type="Texture2D" uid="uid://ce6ea417ntwv" path="res://assets/cat-cat-dance/cat-cat-dance-11 (dragged).png" id="12_50wid"]
+[ext_resource type="Texture2D" uid="uid://deea4dqxta0jh" path="res://assets/cat-cat-dance/cat-cat-dance-12 (dragged).png" id="13_wfq6v"]
+[ext_resource type="Texture2D" uid="uid://cj4a68ici3ngk" path="res://assets/cat-cat-dance/cat-cat-dance-13 (dragged).png" id="14_rt5xi"]
+[ext_resource type="Texture2D" uid="uid://bf41lw5h5mv56" path="res://assets/cat-cat-dance/cat-cat-dance-14 (dragged).png" id="15_cbyge"]
+[ext_resource type="Texture2D" uid="uid://dxaonnyf0upu4" path="res://assets/cat-cat-dance/cat-cat-dance-15 (dragged).png" id="16_xiosq"]
+[ext_resource type="Texture2D" uid="uid://bpxt4tdlnxkqu" path="res://assets/cat-cat-dance/cat-cat-dance-16 (dragged).png" id="17_naudt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbyin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yd6pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qomgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g3xpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_najag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xwffv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m1ste")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bjh21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rea6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_neofg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hk76v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_50wid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wfq6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rt5xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cbyge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xiosq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_naudt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbwlo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rce7w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_exxot"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
+
+[node name="Niveau Vide" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn")]
+script = ExtResource("1_ff1s2")
+playerSpawn = NodePath("PlayerSpawn")
+
+[node name="Fond" type="AnimatedSprite2D" parent="." unique_id=2052076629]
+position = Vector2(1186, 774)
+scale = Vector2(6.4690895, 6.516737)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+frame_progress = 0.5035393
+
+[node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
+collision_layer = 65527
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_8ok58")
+
+[node name="Bottom" type="CollisionShape2D" parent="World Bounds" unique_id=1850367706]
+position = Vector2(104, 1465)
+rotation = -3.1415925
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_cbwlo")
+
+[node name="Right" type="CollisionShape2D" parent="World Bounds" unique_id=394839497]
+position = Vector2(2369, 104)
+rotation = -1.5707963
+shape = SubResource("WorldBoundaryShape2D_rce7w")
+
+[node name="Left" type="CollisionShape2D" parent="World Bounds" unique_id=709563518]
+position = Vector2(0, 104)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_exxot")
+
+[node name="Top" type="CollisionShape2D" parent="World Bounds" unique_id=442268058]
+position = Vector2(104, 0)
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_mxr4r")
+
+[node name="Spawners" type="Node2D" parent="." unique_id=299839190]
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
+position = Vector2(1197, 772)

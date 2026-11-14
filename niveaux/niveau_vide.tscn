@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://biw8o7au1iy5v"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ho77i"]
-load_path = "res://.godot/imported/page_stress.png-b47543b18fa65bd56f03586c96f845cf.ctex"
+[ext_resource type="Texture2D" uid="uid://dv8xgyxw37oxw" path="res://assets/cat-cat-dance.png" id="1_8ok58"]
+[ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_cbwlo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
 
@@ -13,16 +13,17 @@ load_path = "res://.godot/imported/page_stress.png-b47543b18fa65bd56f03586c96f84
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
 
-[node name="Niveau Vide" type="Node2D" unique_id=383967567]
+[node name="Niveau Vide" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn")]
+script = ExtResource("1_cbwlo")
+playerSpawn = NodePath("PlayerSpawn")
 
 [node name="Fond" type="Sprite2D" parent="." unique_id=972025712]
 position = Vector2(1184.0186, 732)
-scale = Vector2(0.7956866, 0.8452656)
-texture = SubResource("CompressedTexture2D_ho77i")
-metadata/_edit_lock_ = true
+scale = Vector2(5.6608067, 6.01353)
+texture = ExtResource("1_8ok58")
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
-collision_layer = 65535
+collision_layer = 65527
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_8ok58")
 
@@ -50,4 +51,4 @@ shape = SubResource("WorldBoundaryShape2D_mxr4r")
 [node name="Spawners" type="Node2D" parent="." unique_id=299839190]
 
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
-position = Vector2(77, 70)
+position = Vector2(1197, 772)

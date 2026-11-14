@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyjcw3qsbq0sm"
-path="res://.godot/imported/modif_stress.png-b96fe1069ebde5f74c946466df6f1a84.ctex"
+uid="uid://rm6mbqcxlcij"
+path="res://.godot/imported/modif_stress.png-71e6b0756f2df6c75d8cb428e5d6b55a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/niveau1/modif_stress.png"
-dest_files=["res://.godot/imported/modif_stress.png-b96fe1069ebde5f74c946466df6f1a84.ctex"]
+source_file="res://assets/niveau0.1/modif_stress.png"
+dest_files=["res://.godot/imported/modif_stress.png-71e6b0756f2df6c75d8cb428e5d6b55a.ctex"]
 
 [params]
 

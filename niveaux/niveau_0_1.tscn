@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://c5bromn2pwr6"]
+
+[ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_5blix"]
+[ext_resource type="Texture2D" uid="uid://rm6mbqcxlcij" path="res://assets/niveau0.1/modif_stress.png" id="2_shev2"]
+[ext_resource type="PackedScene" uid="uid://b40vmsfdwar7u" path="res://entities/Enemies/SpiderBot.tscn" id="5_shev2"]
+[ext_resource type="Texture2D" uid="uid://bkcten02c4trc" path="res://assets/niveau0.1/LIRE.png" id="6_qe0cj"]
+[ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="7_s6x4r"]
+[ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="9_y1iim"]
+[ext_resource type="PackedScene" uid="uid://ly5pnyawof8v" path="res://entities/presence_spawner.tscn" id="11_mddl2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbwlo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rce7w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_exxot"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbyin"]
+radius = 218.44908
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe0cj"]
+size = Vector2(921.125, 120.69922)
+
+[node name="Niveau 0_1" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn", "spawnList")]
+script = ExtResource("1_5blix")
+playerSpawn = NodePath("PlayerSpawn")
+spawnList = [NodePath("PresenceSpawner"), NodePath("PresenceSpawner2")]
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=972025712]
+position = Vector2(1187, 289.00003)
+scale = Vector2(0.7927756, 0.84217304)
+texture = ExtResource("2_shev2")
+
+[node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
+collision_layer = 65527
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_8ok58")
+
+[node name="Bottom" type="CollisionShape2D" parent="World Bounds" unique_id=1850367706]
+position = Vector2(96, 577)
+rotation = -3.1415925
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_cbwlo")
+
+[node name="Right" type="CollisionShape2D" parent="World Bounds" unique_id=394839497]
+position = Vector2(2369, 104)
+rotation = -1.5707963
+shape = SubResource("WorldBoundaryShape2D_rce7w")
+
+[node name="Left" type="CollisionShape2D" parent="World Bounds" unique_id=709563518]
+position = Vector2(0, 104)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_exxot")
+
+[node name="Top" type="CollisionShape2D" parent="World Bounds" unique_id=442268058]
+position = Vector2(104, 0)
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_mxr4r")
+
+[node name="Spawners" type="Node2D" parent="." unique_id=299839190]
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
+position = Vector2(168, 429)
+
+[node name="Lire" type="Sprite2D" parent="." unique_id=1126271937]
+position = Vector2(1420, 236)
+scale = Vector2(0.34029362, 0.34029362)
+texture = ExtResource("6_qe0cj")
+script = ExtResource("7_s6x4r")
+
+[node name="PresenceSpawner" parent="." unique_id=1914830697 node_paths=PackedStringArray("collision") instance=ExtResource("11_mddl2")]
+position = Vector2(1419, 237)
+collision = NodePath("Area2D")
+enemy = ExtResource("9_y1iim")
+interval = 0.001
+first_delay = 0.001
+amount = 1
+spread = Vector2(0, 0)
+
+[node name="Area2D" type="Area2D" parent="PresenceSpawner" unique_id=1633689033]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PresenceSpawner/Area2D" unique_id=186938347]
+scale = Vector2(0.7697971, 2.108327)
+shape = SubResource("CircleShape2D_xbyin")
+
+[node name="PresenceSpawner2" parent="." unique_id=1296443757 node_paths=PackedStringArray("collision") instance=ExtResource("11_mddl2")]
+position = Vector2(1923, 520)
+collision = NodePath("../PresenceSpawner/Area2D")
+enemy = ExtResource("5_shev2")
+interval = 0.01
+first_delay = 0.01
+amount = 9
+spread = Vector2(200, 200)
+
+[node name="Area2D" type="Area2D" parent="PresenceSpawner2" unique_id=1021634665]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PresenceSpawner2/Area2D" unique_id=369681935]
+position = Vector2(-504, -284)
+scale = Vector2(0.03964527, 0.18403198)
+shape = SubResource("RectangleShape2D_qe0cj")
+
+[connection signal="body_entered" from="PresenceSpawner2/Area2D" to="." method="_on_area_2d_body_entered"]
