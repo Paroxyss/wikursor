@@ -7,7 +7,12 @@
 script = ExtResource("1_dw3g1")
 enemy = ExtResource("2_xqsf3")
 
-[node name="Timer" type="Timer" parent="." unique_id=552897880]
+[node name="Interval" type="Timer" parent="." unique_id=552897880]
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="FirstDelay" type="Timer" parent="." unique_id=162688583]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]
+[connection signal="timeout" from="FirstDelay" to="." method="_on_first_delay_timeout"]
