@@ -5,10 +5,6 @@
 [ext_resource type="Script" uid="uid://duepqxc8hru4q" path="res://scripts/camera_player.gd" id="3_ig7xn"]
 [ext_resource type="PackedScene" uid="uid://cdjyjgbssxc6b" path="res://entities/mechant1.tscn" id="4_awk8o"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e44y8"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xbyin"]
-
 [node name="MainScene" type="Node2D" unique_id=428280503]
 
 [node name="Niveau 0" parent="." unique_id=2042643648 instance=ExtResource("1_y2rs8")]
@@ -20,30 +16,6 @@ rotation = 0.009216175
 [node name="Camera2D" type="Camera2D" parent="." unique_id=804963913]
 zoom = Vector2(1.86, 1.86)
 script = ExtResource("3_ig7xn")
-
-[node name="World Bounds" type="StaticBody2D" parent="." unique_id=1351905672]
-physics_material_override = SubResource("PhysicsMaterial_e44y8")
-
-[node name="Left3" type="CollisionShape2D" parent="World Bounds" unique_id=658274292]
-position = Vector2(104, 1465)
-rotation = -3.1415925
-scale = Vector2(-1, -1)
-shape = SubResource("WorldBoundaryShape2D_xbyin")
-
-[node name="Right" type="CollisionShape2D" parent="World Bounds" unique_id=1587376391]
-position = Vector2(2369, 104)
-rotation = -1.5707963
-shape = SubResource("WorldBoundaryShape2D_xbyin")
-
-[node name="Left" type="CollisionShape2D" parent="World Bounds" unique_id=2052736182]
-position = Vector2(0, 104)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_xbyin")
-
-[node name="Top" type="CollisionShape2D" parent="World Bounds" unique_id=1241890287]
-position = Vector2(104, 0)
-scale = Vector2(-1, -1)
-shape = SubResource("WorldBoundaryShape2D_xbyin")
 
 [node name="mechant1" parent="." unique_id=1895046397 node_paths=PackedStringArray("target") instance=ExtResource("4_awk8o")]
 position = Vector2(446, 399)
@@ -77,6 +49,7 @@ target = NodePath("../Player")
 
 [node name="mechant7" parent="." unique_id=1329090688 node_paths=PackedStringArray("target") instance=ExtResource("4_awk8o")]
 position = Vector2(537, 446)
+rotation = -0.00041701322
 mass = 0.1
 target = NodePath("../Player")
 

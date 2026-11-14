@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dxivgcn6ag7tx"]
 
-[ext_resource type="Texture2D" uid="uid://dy26arq3aeccm" path="res://assets/cursor-character-broken-leg-isolated-white-background-d-illustration-166275480 Background Removed.png" id="1_bdw3i"]
 [ext_resource type="Script" uid="uid://b5wvojtq22blq" path="res://scripts/player_controller.gd" id="1_ngn6a"]
+[ext_resource type="Texture2D" uid="uid://1y1shss5xen6" path="res://assets/papy-cursor.png" id="2_lw5ub"]
+[ext_resource type="Texture2D" uid="uid://q53r1otva341" path="res://assets/lance-cursor.png" id="3_ks8m5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xbyin"]
 radius = 40.0
@@ -9,14 +10,23 @@ height = 122.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1651288996]
 scale = Vector2(0.28, 0.28)
-collision_mask = 0
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_ngn6a")
 
-[node name="CursorCharacterBrokenLegIsolatedWhiteBackgroundDIllustration166275480BackgroundRemoved" type="Sprite2D" parent="." unique_id=65265417]
-position = Vector2(3.0517574e-05, 0.99998474)
-scale = Vector2(0.23166665, 0.23166667)
-texture = ExtResource("1_bdw3i")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270202086]
+rotation = -0.5235988
 shape = SubResource("CapsuleShape2D_xbyin")
+
+[node name="Apparences" type="Node2D" parent="." unique_id=954325850]
+
+[node name="papy" type="Sprite2D" parent="Apparences" unique_id=1866122712]
+position = Vector2(-35.714287, -46.428574)
+scale = Vector2(0.5194805, 0.51948047)
+texture = ExtResource("2_lw5ub")
+
+[node name="lance" type="Sprite2D" parent="Apparences" unique_id=1247666660]
+visible = false
+position = Vector2(1.9999988, 0)
+scale = Vector2(0.124945395, 0.124945395)
+texture = ExtResource("3_ks8m5")

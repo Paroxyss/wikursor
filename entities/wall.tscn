@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://do26tevcpnqvr"]
+
+[ext_resource type="Texture2D" uid="uid://b0avgsrw428ao" path="res://assets/wall_anim.png" id="1_301k8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
+size = Vector2(640, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afsjk"]
+atlas = ExtResource("1_301k8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv6kh"]
+atlas = ExtResource("1_301k8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jiht"]
+atlas = ExtResource("1_301k8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6b10"]
+atlas = ExtResource("1_301k8")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvwqm"]
+atlas = ExtResource("1_301k8")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oq6a"]
+atlas = ExtResource("1_301k8")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfaxs"]
+atlas = ExtResource("1_301k8")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5dt7"]
+atlas = ExtResource("1_301k8")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbyin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afsjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv6kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jiht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6b10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvwqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oq6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfaxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5dt7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Wall" type="StaticBody2D" unique_id=775184600]
+collision_layer = 65535
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=452018105]
+shape = SubResource("RectangleShape2D_xbyin")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1230910656]
+texture_filter = 1
+position = Vector2(40, 3.814697e-06)
+scale = Vector2(5.0000005, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame = 1
+frame_progress = 0.20587489
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2019866953]
+texture_filter = 1
+position = Vector2(120, 3.814697e-06)
+scale = Vector2(4.9999995, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame = 7
+frame_progress = 0.8343971
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1929244996]
+texture_filter = 1
+position = Vector2(199.99998, 7.629394e-06)
+scale = Vector2(5.0000005, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame_progress = 0.40651712
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=140670566]
+texture_filter = 1
+position = Vector2(280, 7.629394e-06)
+scale = Vector2(4.9999995, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame_progress = 0.9796022
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=1178684348]
+texture_filter = 1
+position = Vector2(-279.99997, 3.814697e-06)
+scale = Vector2(5.0000005, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame_progress = 0.9263447
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="." unique_id=1785251250]
+texture_filter = 1
+position = Vector2(-200, 3.814697e-06)
+scale = Vector2(4.9999995, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame_progress = 0.49942994
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="." unique_id=160288406]
+texture_filter = 1
+position = Vector2(-119.999985, 7.629394e-06)
+scale = Vector2(5.0000005, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame_progress = 0.40651712
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="." unique_id=669386073]
+texture_filter = 1
+position = Vector2(-40, 7.629394e-06)
+scale = Vector2(4.9999995, 5.0000005)
+sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
+frame_progress = 0.9796022

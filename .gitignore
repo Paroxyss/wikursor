@@ -26,3 +26,5 @@ mono_crash.*.json
 
 # le vim de William
 addons/
+
+.DS_Store
