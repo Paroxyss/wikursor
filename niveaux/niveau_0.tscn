@@ -82,16 +82,6 @@ position = Vector2(1471, 127.00006)
 rotation = 1.0294819
 collision_layer = 65527
 
-[node name="Garde1" parent="Chateau !!" unique_id=1636861212 instance=ExtResource("12_bum3b")]
-position = Vector2(1661, 431)
-freeze = true
-script = null
-
-[node name="Garde2" parent="Chateau !!" unique_id=55992888 instance=ExtResource("12_bum3b")]
-position = Vector2(1760, 491)
-freeze = true
-script = null
-
 [node name="Planches" type="Node2D" parent="." unique_id=893924560]
 
 [node name="StaticBody2D" parent="Planches" unique_id=636436476 instance=ExtResource("3_ug840")]
@@ -358,5 +348,13 @@ node_b = NodePath("../../World Bounds")
 
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=610043839]
 position = Vector2(77, 70)
+
+[node name="mechant1" parent="." unique_id=1636861212 instance=ExtResource("12_bum3b")]
+position = Vector2(1662, 443)
+freeze = true
+
+[node name="mechant2" parent="." unique_id=1695942320 instance=ExtResource("12_bum3b")]
+position = Vector2(1763, 488)
+freeze = true
 
 [connection signal="body_entered" from="LienNiv0ModifCode/Area2D" to="." method="_on_area_2d_body_entered"]

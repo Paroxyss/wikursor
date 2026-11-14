@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://cncwqx76qbuts"]
+
+[ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_36txj"]
+[ext_resource type="Texture2D" uid="uid://b4r77jd52yuvf" path="res://assets/niveau0/page_stress.png" id="2_duyg5"]
+[ext_resource type="Texture2D" uid="uid://cvm446g5774v3" path="res://assets/niveau0/page_stress_glitch.png" id="5_fdqtl"]
+[ext_resource type="Texture2D" uid="uid://hux05tuqlu1j" path="res://assets/niveau0/glitch-mask.png" id="6_70iha"]
+[ext_resource type="Script" uid="uid://e2gn2gmfarv8" path="res://scripts/glitch_mask_movement.gd" id="7_qutrt"]
+[ext_resource type="PackedScene" uid="uid://do26tevcpnqvr" path="res://entities/wall.tscn" id="8_byjo5"]
+[ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="9_eu5ii"]
+[ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="9_l1bo0"]
+[ext_resource type="PackedScene" uid="uid://c6yk3bjxbwf03" path="res://entities/planche.tscn" id="10_bb0of"]
+[ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="13_sihnt"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e44y8"]
+blend_mode = 3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cmdni"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggec4"]
+
+[node name="Niveau 0_2" type="Node2D" unique_id=2042643648 node_paths=PackedStringArray("playerSpawn", "spawnList")]
+script = ExtResource("1_36txj")
+playerSpawn = NodePath("PlayerSpawn")
+spawnList = [NodePath("Spawners/Spawner2"), NodePath("Spawners/Spawner")]
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=1635559790]
+position = Vector2(1184.0186, 732)
+scale = Vector2(0.7956866, 0.8452656)
+texture = ExtResource("2_duyg5")
+metadata/_edit_lock_ = true
+
+[node name="Chateau !!" type="Node2D" parent="." unique_id=1613607956]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Chateau !!" unique_id=427034273]
+position = Vector2(1184, 732.75)
+scale = Vector2(1.2333333, 1.3093107)
+
+[node name="PageStressGlitch" type="Sprite2D" parent="Chateau !!/CanvasGroup" unique_id=851021743]
+position = Vector2(26.756735, 4.773487)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_fdqtl")
+metadata/_edit_lock_ = true
+
+[node name="GlitchMask" type="Sprite2D" parent="Chateau !!/CanvasGroup" unique_id=468754357]
+material = SubResource("CanvasItemMaterial_e44y8")
+position = Vector2(-58.378365, 89.55094)
+scale = Vector2(1.0992397, 1.2437605)
+texture = ExtResource("6_70iha")
+script = ExtResource("7_qutrt")
+
+[node name="Wall" parent="Chateau !!" unique_id=775184600 instance=ExtResource("8_byjo5")]
+position = Vector2(2120, 624.00006)
+rotation = 0.38202858
+collision_layer = 65527
+
+[node name="Wall2" parent="Chateau !!" unique_id=528834637 instance=ExtResource("8_byjo5")]
+position = Vector2(1471, 127.00006)
+rotation = 1.0294819
+collision_layer = 65527
+
+[node name="mechant1" parent="Chateau !!" unique_id=1636861212 instance=ExtResource("9_l1bo0")]
+position = Vector2(1662, 443)
+freeze = true
+
+[node name="mechant2" parent="Chateau !!" unique_id=719747941 instance=ExtResource("9_l1bo0")]
+position = Vector2(1763, 488)
+freeze = true
+
+[node name="Planches" type="Node2D" parent="." unique_id=893924560]
+
+[node name="StaticBody2D" parent="Planches" unique_id=636436476 instance=ExtResource("10_bb0of")]
+position = Vector2(102.00001, 684)
+rotation = 1.9038733
+scale = Vector2(2.110424, 1.9038304)
+
+[node name="StaticBody2D2" parent="Planches" unique_id=1988638719 instance=ExtResource("10_bb0of")]
+position = Vector2(238, 984.99994)
+rotation = 1.5901586
+scale = Vector2(2.110424, 1.9038305)
+
+[node name="StaticBody2D3" parent="Planches" unique_id=184805227 instance=ExtResource("10_bb0of")]
+position = Vector2(726, 832.99994)
+rotation = 3.0421052
+scale = Vector2(0.8231548, 0.8121012)
+
+[node name="StaticBody2D24" parent="Planches" unique_id=1233970033 instance=ExtResource("10_bb0of")]
+position = Vector2(490, 1325)
+rotation = 3.0421052
+scale = Vector2(0.31355262, 0.3185364)
+
+[node name="StaticBody2D26" parent="Planches" unique_id=1434607817 instance=ExtResource("10_bb0of")]
+position = Vector2(1026, 1086)
+rotation = 3.3736248
+scale = Vector2(0.31355262, 0.3185364)
+
+[node name="StaticBody2D27" parent="Planches" unique_id=1333957129 instance=ExtResource("10_bb0of")]
+position = Vector2(1124, 1082.9999)
+rotation = 5.9804726
+scale = Vector2(0.31355262, 0.3185364)
+
+[node name="StaticBody2D7" parent="Planches" unique_id=1761416293 instance=ExtResource("10_bb0of")]
+position = Vector2(1059, 441.00003)
+rotation = 3.0421052
+scale = Vector2(0.4078186, 0.36789644)
+
+[node name="StaticBody2D9" parent="Planches" unique_id=809070463 instance=ExtResource("10_bb0of")]
+position = Vector2(579, 387.00003)
+rotation = -2.9048042
+scale = Vector2(0.40030324, 0.3632203)
+
+[node name="StaticBody2D11" parent="Planches" unique_id=904391161 instance=ExtResource("10_bb0of")]
+position = Vector2(575, 455)
+rotation = -0.3848993
+scale = Vector2(0.56971425, 0.5169376)
+
+[node name="StaticBody2D13" parent="Planches" unique_id=1176474439 instance=ExtResource("10_bb0of")]
+position = Vector2(873, 404)
+rotation = -0.012944373
+scale = Vector2(0.56971425, 0.51693755)
+
+[node name="StaticBody2D14" parent="Planches" unique_id=1383001832 instance=ExtResource("10_bb0of")]
+position = Vector2(564, 232.99998)
+rotation = -0.012944373
+scale = Vector2(0.38799185, 0.35204938)
+
+[node name="StaticBody2D15" parent="Planches" unique_id=1807172438 instance=ExtResource("10_bb0of")]
+position = Vector2(947, 314)
+rotation = -0.21016231
+scale = Vector2(0.38799185, 0.3520494)
+
+[node name="StaticBody2D16" parent="Planches" unique_id=1700628186 instance=ExtResource("10_bb0of")]
+position = Vector2(1089, 311)
+rotation = 0.2590695
+scale = Vector2(0.38799185, 0.3520494)
+
+[node name="StaticBody2D18" parent="Planches" unique_id=328168747 instance=ExtResource("10_bb0of")]
+position = Vector2(1203.0001, 316.99997)
+rotation = -0.29702488
+scale = Vector2(0.25381166, 0.23029928)
+
+[node name="StaticBody2D32" parent="Planches" unique_id=1068870424 instance=ExtResource("10_bb0of")]
+position = Vector2(1418.0001, 233.99997)
+rotation = -0.29702488
+scale = Vector2(0.25381166, 0.23029928)
+
+[node name="StaticBody2D17" parent="Planches" unique_id=1426843685 instance=ExtResource("10_bb0of")]
+position = Vector2(753.00006, 448)
+rotation = 0.2590695
+scale = Vector2(0.38799185, 0.3520494)
+
+[node name="StaticBody2D12" parent="Planches" unique_id=654448818 instance=ExtResource("10_bb0of")]
+position = Vector2(356, 530.99994)
+rotation = -0.3848993
+scale = Vector2(0.56971425, 0.5169376)
+
+[node name="StaticBody2D10" parent="Planches" unique_id=1317698151 instance=ExtResource("10_bb0of")]
+position = Vector2(1151, 393)
+rotation = -3.1332934
+scale = Vector2(0.40030324, 0.36322033)
+
+[node name="StaticBody2D8" parent="Planches" unique_id=972364706 instance=ExtResource("10_bb0of")]
+position = Vector2(1350.9999, 616)
+rotation = 3.0421052
+scale = Vector2(0.2894261, 0.26109365)
+
+[node name="StaticBody2D19" parent="Planches" unique_id=271042823 instance=ExtResource("10_bb0of")]
+position = Vector2(1056.0001, 564)
+rotation = 2.9540482
+scale = Vector2(0.2894261, 0.26109365)
+
+[node name="StaticBody2D23" parent="Planches" unique_id=503687392 instance=ExtResource("10_bb0of")]
+position = Vector2(628, 655.00006)
+rotation = 2.9176962
+scale = Vector2(0.32737884, 0.28369844)
+
+[node name="StaticBody2D20" parent="Planches" unique_id=153504588 instance=ExtResource("10_bb0of")]
+position = Vector2(1168, 563)
+rotation = 3.3185205
+scale = Vector2(0.2894261, 0.26109365)
+
+[node name="StaticBody2D21" parent="Planches" unique_id=435187962 instance=ExtResource("10_bb0of")]
+position = Vector2(1233, 434)
+rotation = 3.0421052
+scale = Vector2(0.2894261, 0.26109365)
+
+[node name="StaticBody2D22" parent="Planches" unique_id=721566781 instance=ExtResource("10_bb0of")]
+position = Vector2(1318, 433)
+rotation = 3.2378416
+scale = Vector2(0.2894261, 0.26109365)
+
+[node name="StaticBody2D4" parent="Planches" unique_id=753391689 instance=ExtResource("10_bb0of")]
+position = Vector2(1083, 867)
+rotation = -2.9902463
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D5" parent="Planches" unique_id=792494348 instance=ExtResource("10_bb0of")]
+position = Vector2(1485, 867)
+rotation = -2.9902463
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D6" parent="Planches" unique_id=1034345499 instance=ExtResource("10_bb0of")]
+position = Vector2(1559, 866.0001)
+rotation = 2.7224011
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D25" parent="Planches" unique_id=1155346103 instance=ExtResource("10_bb0of")]
+position = Vector2(1654, 1078)
+rotation = 3.0275667
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D28" parent="Planches" unique_id=1042912527 instance=ExtResource("10_bb0of")]
+position = Vector2(1742.0001, 1088)
+rotation = 3.0275667
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D29" parent="Planches" unique_id=755133151 instance=ExtResource("10_bb0of")]
+position = Vector2(1593, 1170.0001)
+rotation = 3.3070138
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D30" parent="Planches" unique_id=745732770 instance=ExtResource("10_bb0of")]
+position = Vector2(1384.0002, 1127.0001)
+rotation = 2.8658676
+scale = Vector2(0.33578256, 0.30291218)
+
+[node name="StaticBody2D31" parent="Planches" unique_id=597925689 instance=ExtResource("10_bb0of")]
+position = Vector2(1359, 1286.9999)
+rotation = 2.7216053
+scale = Vector2(0.24679524, 0.22263598)
+
+[node name="World Bounds" type="StaticBody2D" parent="." unique_id=1949292143]
+collision_layer = 65527
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_cmdni")
+
+[node name="Left3" type="CollisionShape2D" parent="World Bounds" unique_id=1801865232]
+position = Vector2(104, 1465)
+rotation = -3.1415925
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_ggec4")
+
+[node name="Right" type="CollisionShape2D" parent="World Bounds" unique_id=105831694]
+position = Vector2(2369, 104)
+rotation = -1.5707963
+shape = SubResource("WorldBoundaryShape2D_ggec4")
+
+[node name="Left" type="CollisionShape2D" parent="World Bounds" unique_id=1156524818]
+position = Vector2(0, 104)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_ggec4")
+
+[node name="Top" type="CollisionShape2D" parent="World Bounds" unique_id=2106601474]
+position = Vector2(104, 0)
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_ggec4")
+
+[node name="Spawners" type="Node2D" parent="." unique_id=1139853821]
+
+[node name="Spawner2" parent="Spawners" unique_id=2013283453 instance=ExtResource("9_eu5ii")]
+position = Vector2(993, 238)
+interval = 0.01
+first_delay = 0.01
+amount = 50
+
+[node name="Spawner" parent="Spawners" unique_id=1926012024 instance=ExtResource("9_eu5ii")]
+position = Vector2(1763, 946)
+interval = 0.01
+first_delay = 0.01
+amount = 50
+
+[node name="Lance TODO" type="Sprite2D" parent="." unique_id=200879763]
+position = Vector2(1798.0001, 382.00003)
+scale = Vector2(0.21829581, 0.21829581)
+texture = ExtResource("13_sihnt")
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=610043839]
+position = Vector2(1609, 124)

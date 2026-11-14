@@ -10,6 +10,7 @@ friction = 0.0
 radius = 64.12488
 
 [node name="mechant1" type="RigidBody2D" unique_id=1636861212]
+collision_layer = 9
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_0r6sc")
 gravity_scale = 0.0

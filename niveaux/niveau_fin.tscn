@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boakm0ei7aaqi"]
 
 [ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_ff1s2"]
+[ext_resource type="Texture2D" uid="uid://dv8xgyxw37oxw" path="res://assets/cat-cat-dance.png" id="2_wl34e"]
 [ext_resource type="Texture2D" uid="uid://c4joqkdmk3r60" path="res://assets/cat-cat-dance/cat-cat-dance-1 (dragged).png" id="2_yd6pe"]
 [ext_resource type="Texture2D" uid="uid://dq2ivixjgh2" path="res://assets/cat-cat-dance/cat-cat-dance-2 (dragged).png" id="3_qomgd"]
 [ext_resource type="Texture2D" uid="uid://c3khw2g7n5io7" path="res://assets/cat-cat-dance/cat-cat-dance-3 (dragged).png" id="4_g3xpj"]
@@ -88,10 +89,16 @@ animations = [{
 script = ExtResource("1_ff1s2")
 playerSpawn = NodePath("PlayerSpawn")
 
-[node name="Fond" type="AnimatedSprite2D" parent="." unique_id=2052076629]
+[node name="Fond" type="Sprite2D" parent="." unique_id=1963877706]
+position = Vector2(1184.0186, 732)
+scale = Vector2(5.6608067, 6.01353)
+texture = ExtResource("2_wl34e")
+
+[node name="CHAT" type="AnimatedSprite2D" parent="." unique_id=2052076629]
 position = Vector2(1186, 774)
 scale = Vector2(6.4690895, 6.516737)
 sprite_frames = SubResource("SpriteFrames_xbyin")
+autoplay = "default"
 frame_progress = 0.5035393
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]

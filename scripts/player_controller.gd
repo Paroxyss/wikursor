@@ -51,7 +51,7 @@ func ability(ability: int):
 		print("grab")
 	if ability == Abilities.Piou:
 		print("piou")
-		
+
 
 func damaged(damage : int):
 	pv -= damage
