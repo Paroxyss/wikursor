@@ -6,7 +6,7 @@
 size = Vector2(420, 142)
 
 [node name="Planche" type="StaticBody2D" unique_id=636436476]
-collision_layer = 65535
+collision_layer = 65527
 collision_mask = 0
 
 [node name="Planche" type="Sprite2D" parent="." unique_id=1500281950]

@@ -58,10 +58,12 @@ script = ExtResource("6_c1wh5")
 [node name="Wall" parent="Chateau !!" unique_id=775184600 instance=ExtResource("4_l1ssp")]
 position = Vector2(2120, 624.00006)
 rotation = 0.38202858
+collision_layer = 65527
 
 [node name="Wall2" parent="Chateau !!" unique_id=528834637 instance=ExtResource("4_l1ssp")]
 position = Vector2(1471, 127.00006)
 rotation = 1.0294819
+collision_layer = 65527
 
 [node name="Garde1" parent="Chateau !!" unique_id=1636861212 instance=ExtResource("12_bum3b")]
 position = Vector2(1661, 431)
@@ -236,7 +238,7 @@ rotation = 2.7216053
 scale = Vector2(0.24679524, 0.22263598)
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=1949292143]
-collision_layer = 65535
+collision_layer = 65527
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_cmdni")
 
@@ -307,7 +309,7 @@ script = ExtResource("8_cmdni")
 
 [node name="PlanchePhysique" parent="LePassage( tain tain tainnnn)" unique_id=791614214 instance=ExtResource("8_c1wh5")]
 position = Vector2(-105, -51)
-collision_layer = 65535
+collision_layer = 65527
 collision_mask = 3
 freeze = true
 
@@ -318,7 +320,7 @@ node_b = NodePath("../../World Bounds")
 
 [node name="PlanchePhysique2" parent="LePassage( tain tain tainnnn)" unique_id=576162788 instance=ExtResource("8_c1wh5")]
 position = Vector2(93, -51)
-collision_layer = 65535
+collision_layer = 65527
 collision_mask = 3
 freeze = true
 

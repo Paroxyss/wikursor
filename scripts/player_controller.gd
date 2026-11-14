@@ -56,6 +56,7 @@ func damaged(damage : int):
 		print("GameOver")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Enemy:
-		pv -= body.damage
+	print("aie")
+	print(body)
+	damaged(body.damage)
 		
