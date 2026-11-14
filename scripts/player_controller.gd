@@ -3,15 +3,18 @@ extends CharacterBody2D
 
 @export var PUSH_FORCE = 300
 @export var SPEED = 300.0
-
+var isAttacking = false
 var currentApparence : String = "papy"
-
+enum Abilities {Select, Lance, Grab, Piou}
+var dic : Dictionary = {Abilities.Select : "select", Abilities.Lance : "lance", Abilities.Grab : "grab", Abilities.Piou : "piou"}
+var unlockedAbilities : Array[int] = [Abilities.Lance]
 func _process(delta: float) -> void:
-	if position.x > 1000 and currentApparence != "lance":
-		set_apparence("lance")
-	if position.x < 100 and currentApparence != "papy":
-		set_apparence("papy")
 		
+	for action in unlockedAbilities:
+		if Input.is_action_just_pressed(dic[action]) and !isAttacking:
+			isAttacking = true
+			set_apparence(dic[action])
+			ability(action)
 
 func _physics_process(delta: float) -> void:
 
@@ -32,3 +35,14 @@ func set_apparence(name: String):
 		get_node("Apparences/" + currentApparence).hide()
 	get_node("Apparences/" + name).show()
 	currentApparence = name
+	
+func ability(ability: int):
+	if ability == Abilities.Select:
+		print ("select")
+	if ability == Abilities.Lance:
+		print("lance")
+	if ability == Abilities.Grab:
+		print("grab")
+	if ability == Abilities.Piou:
+		print("piou")
+		
