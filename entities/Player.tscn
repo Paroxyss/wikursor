@@ -9,6 +9,8 @@ height = 122.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1651288996]
 scale = Vector2(0.28, 0.28)
+collision_mask = 0
+motion_mode = 1
 script = ExtResource("1_ngn6a")
 
 [node name="CursorCharacterBrokenLegIsolatedWhiteBackgroundDIllustration166275480BackgroundRemoved" type="Sprite2D" parent="." unique_id=65265417]
