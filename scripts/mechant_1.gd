@@ -1,7 +1,7 @@
 class_name Enemy extends RigidBody2D
 
 const SPEED = 60.0
-
+@export var damage : int = 1
 @export
 var target: CharacterBody2D
 

@@ -8,6 +8,9 @@ var currentApparence : String = "papy"
 enum Abilities {Select, Lance, Grab, Piou}
 var dic : Dictionary = {Abilities.Select : "select", Abilities.Lance : "lance", Abilities.Grab : "grab", Abilities.Piou : "piou"}
 var unlockedAbilities : Array[int] = [Abilities.Lance]
+var pv : int
+@export var maxPv : int = 20
+
 func _process(delta: float) -> void:
 		
 	for action in unlockedAbilities:
@@ -45,4 +48,14 @@ func ability(ability: int):
 		print("grab")
 	if ability == Abilities.Piou:
 		print("piou")
+		
+
+func damaged(damage : int):
+	pv -= damage
+	if pv <= 0:
+		print("GameOver")
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		pv -= body.damage
 		

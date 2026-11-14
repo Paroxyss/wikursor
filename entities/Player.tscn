@@ -8,6 +8,10 @@
 radius = 40.0
 height = 122.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ngp1m"]
+radius = 52.664074
+height = 153.3481
+
 [node name="Player" type="CharacterBody2D" unique_id=1651288996]
 z_index = 1
 scale = Vector2(0.28, 0.28)
@@ -31,3 +35,11 @@ visible = false
 position = Vector2(1.9999988, 0)
 scale = Vector2(0.124945395, 0.124945395)
 texture = ExtResource("3_ks8m5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=814363922]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=353764228]
+rotation = -0.47023717
+shape = SubResource("CapsuleShape2D_ngp1m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
