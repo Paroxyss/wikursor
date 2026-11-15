@@ -9,7 +9,7 @@ friction = 0.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_qh1oc"]
 radius = 64.12488
 
-[node name="mechant1" type="RigidBody2D" unique_id=1636861212]
+[node name="GrinchBot" type="RigidBody2D" unique_id=1636861212]
 collision_layer = 25
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_0r6sc")
