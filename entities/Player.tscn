@@ -116,6 +116,7 @@ libraries/ = SubResource("AnimationLibrary_idcse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270202086]
 rotation = -0.5235988
+scale = Vector2(0.6652405, 0.6652405)
 shape = SubResource("CapsuleShape2D_xbyin")
 
 [node name="Barre de vie" parent="." unique_id=1310077739 instance=ExtResource("2_dv4ir")]
@@ -177,6 +178,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=353764228]
 rotation = -0.47023717
+scale = Vector2(0.6652405, 0.6652405)
 shape = SubResource("CapsuleShape2D_ngp1m")
 
 [node name="Heading" type="Node2D" parent="." unique_id=1973702304]

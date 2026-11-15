@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_n1xhs"]
 [ext_resource type="Texture2D" uid="uid://cds4oqx1fp81f" path="res://assets/niveau1/niveau1_1_fond.png" id="2_n1xhs"]
+[ext_resource type="Texture2D" uid="uid://dsa5ckogqqd8x" path="res://assets/cursors/Pan.png" id="3_5x2fk"]
 [ext_resource type="PackedScene" uid="uid://c6yk3bjxbwf03" path="res://entities/planche.tscn" id="3_7kgaq"]
 [ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="4_pofuc"]
+[ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="4_wsmal"]
 [ext_resource type="PackedScene" uid="uid://b40vmsfdwar7u" path="res://entities/Enemies/SpiderBot.tscn" id="5_jr7rc"]
 [ext_resource type="PackedScene" uid="uid://ly5pnyawof8v" path="res://entities/presence_spawner.tscn" id="5_ogwme"]
 [ext_resource type="PackedScene" uid="uid://cqby26bdjupf0" path="res://entities/Enemies/TrojanBot.tscn" id="6_8segv"]
 [ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="8_5x2fk"]
+[ext_resource type="PackedScene" uid="uid://ys7f8q6ahefi" path="res://entities/Enemies/GrinchBot.tscn" id="10_wsmal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e44y8"]
+size = Vector2(157.86206, 157.86206)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
 
@@ -22,15 +28,30 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbyin"]
 radius = 405.00122
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
+
 [node name="Niveau 1_1" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_n1xhs")
 playerSpawn = NodePath("PlayerSpawn")
-spawnList = [NodePath("Spawners/Spawner"), NodePath("Spawners/PresenceSpawner"), NodePath("Spawners/PresenceSpawner2")]
+spawnList = [NodePath("Spawners/Phase 1/Spawner"), NodePath("Spawners/Phase 1/PresenceSpawner"), NodePath("Spawners/Phase 1/PresenceSpawner2"), NodePath("Spawners/PresenceSpawner"), NodePath("Spawners/PresenceSpawner2"), NodePath("Spawners/PresenceSpawner5"), NodePath("Spawners/PresenceSpawner3"), NodePath("Spawners/PresenceSpawner4"), NodePath("Spawners/PresenceSpawner6"), NodePath("Spawners/PresenceSpawner7"), NodePath("Spawners/PresenceSpawner8"), NodePath("Spawners/PresenceSpawner9")]
 
 [node name="Fond" type="Sprite2D" parent="." unique_id=972025712]
-position = Vector2(1840.0438, 1160.5001)
-scale = Vector2(1.2542893, 1.3323765)
+position = Vector2(1552.0143, 971)
+scale = Vector2(1.0579511, 1.1148106)
 texture = ExtResource("2_n1xhs")
+metadata/_edit_lock_ = true
+
+[node name="Pan" type="Sprite2D" parent="." unique_id=1240785577]
+position = Vector2(883, 1354)
+scale = Vector2(0.453125, 0.453125)
+texture = ExtResource("3_5x2fk")
+script = ExtResource("4_wsmal")
+
+[node name="Area2D" type="Area2D" parent="Pan" unique_id=338713291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Area2D" unique_id=1144025710]
+position = Vector2(-22.06897, -19.862198)
+shape = SubResource("RectangleShape2D_e44y8")
 
 [node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
 collision_layer = 7
@@ -60,19 +81,24 @@ shape = SubResource("WorldBoundaryShape2D_mxr4r")
 
 [node name="Spawners" type="Node2D" parent="." unique_id=299839190]
 
-[node name="TrollBot" parent="Spawners" unique_id=1636861212 instance=ExtResource("8_5x2fk")]
-position = Vector2(2310, 1002)
-freeze = true
+[node name="Phase 1" type="Node2D" parent="Spawners" unique_id=1340712655]
 
-[node name="TrollBot2" parent="Spawners" unique_id=1395377495 instance=ExtResource("8_5x2fk")]
-position = Vector2(2524, 938)
+[node name="TrollBot" parent="Spawners/Phase 1" unique_id=1636861212 instance=ExtResource("8_5x2fk")]
+position = Vector2(2310, 926.00006)
 freeze = true
+damage = 3
 
-[node name="TrollBot3" parent="Spawners" unique_id=1159730127 instance=ExtResource("8_5x2fk")]
-position = Vector2(2417, 973)
+[node name="TrollBot2" parent="Spawners/Phase 1" unique_id=1395377495 instance=ExtResource("8_5x2fk")]
+position = Vector2(2524, 862.00006)
 freeze = true
+damage = 3
 
-[node name="Spawner" parent="Spawners" unique_id=2013283453 instance=ExtResource("4_pofuc")]
+[node name="TrollBot3" parent="Spawners/Phase 1" unique_id=1159730127 instance=ExtResource("8_5x2fk")]
+position = Vector2(2417, 897.00006)
+freeze = true
+damage = 3
+
+[node name="Spawner" parent="Spawners/Phase 1" unique_id=2013283453 instance=ExtResource("4_pofuc")]
 position = Vector2(81, 494)
 enemy = ExtResource("5_jr7rc")
 interval = 0.3
@@ -80,61 +106,165 @@ first_delay = 0.0
 amount = 20
 spread = Vector2(200, 800)
 
-[node name="PresenceSpawner" parent="Spawners" unique_id=1914830697 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
-position = Vector2(2219, 26)
+[node name="PresenceSpawner" parent="Spawners/Phase 1" unique_id=1914830697 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(2538, 39)
 collision = NodePath("../Phase1")
 enemy = ExtResource("5_jr7rc")
 interval = 0.6
 first_delay = 0.0
 amount = 20
-spread = Vector2(1800, 100)
+spread = Vector2(1000, 100)
 
-[node name="PresenceSpawner2" parent="Spawners" unique_id=1188612022 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+[node name="PresenceSpawner2" parent="Spawners/Phase 1" unique_id=1188612022 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
 position = Vector2(2721, 53)
 collision = NodePath("../Phase1")
 enemy = ExtResource("6_8segv")
 interval = 0.01
-first_delay = 5.0
+first_delay = 3.0
 amount = 10
 
-[node name="Phase1" type="Area2D" parent="Spawners" unique_id=109836879]
+[node name="Phase1" type="Area2D" parent="Spawners/Phase 1" unique_id=109836879]
 position = Vector2(2312, 703)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/Phase1" unique_id=1185310325]
-position = Vector2(47, -85)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/Phase 1/Phase1" unique_id=1185310325]
+position = Vector2(48, -209)
 shape = SubResource("CircleShape2D_xbyin")
+debug_color = Color(0.6417861, 0.5231555, 0.09073902, 0.41960785)
+
+[node name="TrollBot" parent="Spawners" unique_id=653224420 instance=ExtResource("8_5x2fk")]
+position = Vector2(788, 1345)
+freeze = true
+damage = 3
+
+[node name="TrollBot2" parent="Spawners" unique_id=1951288746 instance=ExtResource("8_5x2fk")]
+position = Vector2(955, 1347)
+freeze = true
+damage = 3
+
+[node name="TrollBot4" parent="Spawners" unique_id=1833979182 instance=ExtResource("8_5x2fk")]
+position = Vector2(870, 1448)
+freeze = true
+damage = 3
+
+[node name="TrollBot3" parent="Spawners" unique_id=1363347589 instance=ExtResource("8_5x2fk")]
+position = Vector2(870, 1243)
+freeze = true
+damage = 3
+
+[node name="PresenceSpawner" parent="Spawners" unique_id=143777952 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(3014, 743)
+collision = NodePath("../Phase2")
+enemy = ExtResource("5_jr7rc")
+interval = 0.01
+amount = 10
+
+[node name="PresenceSpawner2" parent="Spawners" unique_id=145216685 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(3052, 1426)
+collision = NodePath("../Phase2")
+enemy = ExtResource("5_jr7rc")
+interval = 0.5
+first_delay = 3.0
+amount = 5
+spread = Vector2(100, 800)
+
+[node name="PresenceSpawner5" parent="Spawners" unique_id=2062938048 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(3050, 1375)
+collision = NodePath("../Phase2")
+enemy = ExtResource("5_jr7rc")
+interval = 4.0
+first_delay = 8.0
+spread = Vector2(100, 800)
+
+[node name="PresenceSpawner6" parent="Spawners" unique_id=1873523663 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(1293, 1883)
+collision = NodePath("../Phase2")
+enemy = ExtResource("6_8segv")
+interval = 5.0
+first_delay = 6.0
+spread = Vector2(1200, 100)
+
+[node name="PresenceSpawner7" parent="Spawners" unique_id=1016675467 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(34, 980)
+collision = NodePath("../Phase2")
+enemy = ExtResource("6_8segv")
+interval = 5.0
+first_delay = 10.0
+
+[node name="PresenceSpawner8" parent="Spawners" unique_id=1672473058 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(872, 1097)
+collision = NodePath("../Phase2")
+enemy = ExtResource("6_8segv")
+interval = 0.01
+first_delay = 0.0
+amount = 3
+
+[node name="PresenceSpawner9" parent="Spawners" unique_id=1684981911 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(495, 1623)
+collision = NodePath("../Phase2")
+enemy = ExtResource("6_8segv")
+interval = 0.01
+first_delay = 0.0
+amount = 3
+
+[node name="PresenceSpawner3" parent="Spawners" unique_id=1461046563 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(2404, 1869)
+collision = NodePath("../Phase2")
+enemy = ExtResource("10_wsmal")
+interval = 0.7
+first_delay = 2.0
+amount = 5
+spread = Vector2(800, 100)
+
+[node name="PresenceSpawner4" parent="Spawners" unique_id=2050421897 node_paths=PackedStringArray("collision") instance=ExtResource("5_ogwme")]
+position = Vector2(1445, 1372)
+collision = NodePath("../Phase2")
+enemy = ExtResource("8_5x2fk")
+interval = 0.01
+first_delay = 2.0
+amount = 4
+spread = Vector2(500, 800)
+
+[node name="Phase2" type="Area2D" parent="Spawners" unique_id=702186111]
+position = Vector2(2595, 1443)
+rotation = -0.2672272
+scale = Vector2(-38.082966, -9.665002)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/Phase2" unique_id=548455397]
+position = Vector2(-1.5110486, 47.608517)
+shape = SubResource("RectangleShape2D_xbyin")
+debug_color = Color(0.6417861, 0.5231555, 0.09073902, 0.41960785)
 
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
-position = Vector2(814, 531)
+position = Vector2(610, 487)
 
 [node name="Planches" type="Node2D" parent="." unique_id=1924880322]
 position = Vector2(170, 1146)
 rotation = 0.07931532
 
 [node name="Planche" parent="Planches" unique_id=636436476 instance=ExtResource("3_7kgaq")]
-position = Vector2(22.826424, -192.41351)
+position = Vector2(16.804783, -268.17453)
 
 [node name="Planche2" parent="Planches" unique_id=1640670007 instance=ExtResource("3_7kgaq")]
-position = Vector2(408.0857, -255.1342)
+position = Vector2(402.06406, -330.8952)
 rotation = -0.4090967
 scale = Vector2(1.1513221, 1.0230746)
 
 [node name="Planche3" parent="Planches" unique_id=1258125828 instance=ExtResource("3_7kgaq")]
-position = Vector2(930.0907, -250.47968)
+position = Vector2(924.06903, -326.2407)
 rotation = -0.07931532
 scale = Vector2(1.3220938, 1.2167207)
 
 [node name="Planche4" parent="Planches" unique_id=906275028 instance=ExtResource("3_7kgaq")]
-position = Vector2(1412.8993, -335.0003)
+position = Vector2(1406.8777, -410.76132)
 rotation = -0.20164055
 
 [node name="Planche8" parent="Planches" unique_id=1143079109 instance=ExtResource("3_7kgaq")]
-position = Vector2(132.1603, -1050.7748)
+position = Vector2(145.21156, -1075.8878)
 rotation = 0.23892495
 
 [node name="Planche9" parent="Planches" unique_id=396604600 instance=ExtResource("3_7kgaq")]
-position = Vector2(555.77246, -984.129)
-rotation = -0.17017174
+position = Vector2(579.6437, -1037.1871)
+rotation = 0.25290257
 scale = Vector2(1.1513221, 1.0230746)
 
 [node name="Planche10" parent="Planches" unique_id=219492631 instance=ExtResource("3_7kgaq")]
@@ -143,18 +273,37 @@ rotation = 0.15960963
 scale = Vector2(1.3220938, 1.2167207)
 
 [node name="Planche11" parent="Planches" unique_id=151209904 instance=ExtResource("3_7kgaq")]
-position = Vector2(1434.3842, -1175.3445)
+position = Vector2(1435.0585, -1091.1332)
 rotation = 1.9279572
 
+[node name="Planche12" parent="Planches" unique_id=466357664 instance=ExtResource("3_7kgaq")]
+position = Vector2(1641.5293, -878.82477)
+rotation = 3.2229476
+
 [node name="Planche5" parent="Planches" unique_id=1387188335 instance=ExtResource("3_7kgaq")]
-position = Vector2(1841.0131, -337.92987)
+position = Vector2(1834.9915, -413.6909)
 rotation = 0.21569014
 
-[node name="Planche6" parent="Planches" unique_id=1468913397 instance=ExtResource("3_7kgaq")]
-position = Vector2(2602.4983, -412.49854)
-rotation = -0.07931532
+[node name="Planche6" parent="Planches" unique_id=452262352 instance=ExtResource("3_7kgaq")]
+position = Vector2(2032.3833, 239.72348)
+rotation = -0.2488226
+
+[node name="Planche15" parent="Planches" unique_id=1312868373 instance=ExtResource("3_7kgaq")]
+position = Vector2(1235.7128, -40.034103)
+rotation = -0.2488226
+scale = Vector2(0.36874908, 0.36874908)
+
+[node name="Planche14" parent="Planches" unique_id=1048293251 instance=ExtResource("3_7kgaq")]
+position = Vector2(2645.6177, -135.04263)
+rotation = -0.97920704
+
+[node name="Planche13" parent="Planches" unique_id=374259977 instance=ExtResource("3_7kgaq")]
+position = Vector2(538.5858, 490.86987)
+rotation = -0.30936015
 
 [node name="Planche7" parent="Planches" unique_id=112823480 instance=ExtResource("3_7kgaq")]
-position = Vector2(3144.4456, -725.4192)
+position = Vector2(2648.6929, -765.26764)
 rotation = -0.7356788
 scale = Vector2(1.7129871, 1.3154522)
+
+[connection signal="body_entered" from="Pan/Area2D" to="." method="_on_area_2d_body_entered"]
