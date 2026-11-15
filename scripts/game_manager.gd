@@ -36,8 +36,8 @@ func setup_level():
 	camera.niveau = niveau
 	camera.player = player
 	camera.zoom = Vector2(2, 2)
-	camera.setup()
 	add_child(camera)
+	camera.setup()
 
 	niveau.next_level.connect(_on_next_level)
 
@@ -46,7 +46,8 @@ func _on_next_level() -> void:
 	if levelList.size() <= index_niveau:
 		print("fini !")
 		return
-	niveau.queue_free.call_deferred()
+	niveau.queue_free()
+	camera.queue_free()
 	niveau = levelList[index_niveau].instantiate()
 	setup_level.call_deferred()
 

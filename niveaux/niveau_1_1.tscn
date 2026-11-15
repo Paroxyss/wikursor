@@ -32,7 +32,6 @@ radius = 405.00122
 
 [node name="Niveau 1_1" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_n1xhs")
-sizeOverride = Vector2(3100, 1940)
 playerSpawn = NodePath("PlayerSpawn")
 spawnList = [NodePath("Spawners/Phase 1/Spawner"), NodePath("Spawners/Phase 1/PresenceSpawner"), NodePath("Spawners/Phase 1/PresenceSpawner2"), NodePath("Spawners/PresenceSpawner"), NodePath("Spawners/PresenceSpawner2"), NodePath("Spawners/PresenceSpawner5"), NodePath("Spawners/PresenceSpawner3"), NodePath("Spawners/PresenceSpawner4"), NodePath("Spawners/PresenceSpawner6"), NodePath("Spawners/PresenceSpawner7"), NodePath("Spawners/PresenceSpawner8"), NodePath("Spawners/PresenceSpawner9")]
 
