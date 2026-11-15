@@ -7,7 +7,7 @@ var isAttacking = false
 var currentApparence : String = "papy"
 enum Abilities {Select, Lance, Grab, Piou}
 var dic : Dictionary = {Abilities.Select : "select", Abilities.Lance : "lance", Abilities.Grab : "grab", Abilities.Piou : "piou"}
-var unlockedAbilities : Array[int] = []
+var unlockedAbilities : Array[int] = [Abilities.Lance]
 var pv : int
 @export var maxPv : int = 20
 

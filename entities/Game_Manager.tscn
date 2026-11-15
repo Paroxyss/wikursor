@@ -7,10 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://c5bromn2pwr6" path="res://niveaux/niveau_0_1.tscn" id="5_uxh72"]
 [ext_resource type="PackedScene" uid="uid://cncwqx76qbuts" path="res://niveaux/niveau_0_2.tscn" id="6_6fngt"]
 [ext_resource type="PackedScene" uid="uid://boakm0ei7aaqi" path="res://niveaux/niveau_fin.tscn" id="6_gj4ss"]
+[ext_resource type="PackedScene" uid="uid://bkdh83egr50bm" path="res://niveaux/niveau_1.tscn" id="7_6t5mb"]
+[ext_resource type="PackedScene" uid="uid://rt3tubmp3hou" path="res://niveaux/niveau_1_1.tscn" id="8_5ycn2"]
 
 [node name="GameManager" type="Node2D" unique_id=1472408121]
 script = ExtResource("1_ehsp4")
 cameraFile = ExtResource("2_r3473")
 playerFile = ExtResource("3_sije6")
-index_niveau = 2
-levelList = Array[PackedScene]([ExtResource("4_uxh72"), ExtResource("5_uxh72"), ExtResource("6_6fngt"), ExtResource("6_gj4ss")])
+index_niveau = 4
+levelList = Array[PackedScene]([ExtResource("4_uxh72"), ExtResource("5_uxh72"), ExtResource("6_6fngt"), ExtResource("7_6t5mb"), ExtResource("8_5ycn2"), ExtResource("6_gj4ss")])
