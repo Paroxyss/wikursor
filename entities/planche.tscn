@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6yk3bjxbwf03"]
 
-[ext_resource type="Texture2D" uid="uid://dwl6j44irdcxd" path="res://assets/niveau0/planche.png" id="1_o4ouc"]
+[ext_resource type="Texture2D" uid="uid://c0yioq3tp2v1m" path="res://assets/spider-mur.png" id="1_o4ouc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
 size = Vector2(420, 142)
@@ -9,9 +9,20 @@ size = Vector2(420, 142)
 collision_layer = 7
 collision_mask = 0
 
-[node name="Planche" type="Sprite2D" parent="." unique_id=1500281950]
-scale = Vector2(0.6216216, 0.6216216)
-texture = ExtResource("1_o4ouc")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=8296711]
 shape = SubResource("RectangleShape2D_xbyin")
+
+[node name="SpiderMur" type="Sprite2D" parent="." unique_id=1510003509]
+position = Vector2(-140.50002, -0.52107716)
+scale = Vector2(0.28313258, 0.2831326)
+texture = ExtResource("1_o4ouc")
+
+[node name="SpiderMur2" type="Sprite2D" parent="." unique_id=1837865130]
+position = Vector2(3, -0.52107716)
+scale = Vector2(0.28313258, 0.2831326)
+texture = ExtResource("1_o4ouc")
+
+[node name="SpiderMur3" type="Sprite2D" parent="." unique_id=1001853663]
+position = Vector2(142.99998, -0.52107716)
+scale = Vector2(0.28313258, 0.2831326)
+texture = ExtResource("1_o4ouc")
