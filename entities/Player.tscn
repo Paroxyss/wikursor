@@ -8,6 +8,90 @@
 [ext_resource type="Texture2D" uid="uid://dt8hq4c8r2f5c" path="res://assets/cursors/Text.png" id="6_dv4ir"]
 [ext_resource type="Texture2D" uid="uid://4tmxlk2rlgdw" path="res://assets/cursors/Handwriting.png" id="7_25mxy"]
 
+[sub_resource type="Animation" id="Animation_25mxy"]
+resource_name = "ATTAQUE"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../lance:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.16493852, 1.0000004),
+"update": 0,
+"values": [Vector2(35.714287, 17.857141), Vector2(-7.1428537, -82.14286)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../lance:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.16493852, 1),
+"update": 0,
+"values": [0.0, -0.28874743]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../lance:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.16493852, 1),
+"update": 0,
+"values": [Vector2(0.574, 0.574), Vector2(0.5845007, 1.7641988)]
+}
+
+[sub_resource type="Animation" id="Animation_dv4ir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../lance:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35.714287, 17.857141)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../lance:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../lance:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.574, 0.574)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_idcse"]
+_data = {
+&"ATTAQUE": SubResource("Animation_25mxy"),
+&"RESET": SubResource("Animation_dv4ir")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xbyin"]
 radius = 40.0
 height = 122.0
@@ -24,6 +108,10 @@ scale = Vector2(0.28, 0.28)
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_ngn6a")
+
+[node name="LanceAnimation" type="AnimationPlayer" parent="." unique_id=1811099286]
+root_node = NodePath("../Apparences/papy")
+libraries/ = SubResource("AnimationLibrary_idcse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270202086]
 rotation = -0.5235988
