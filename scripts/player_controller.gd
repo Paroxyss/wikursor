@@ -77,13 +77,11 @@ func lance() -> void:
 	print(heading)
 	$Apparences.rotation = heading + deg_to_rad(115)
 	$Apparences/LanceEffectZone.set_block_signals(false)
+	$LanceAnimation.play("ATTAQUE", -1, 1./0.1, false)
+	$Heading.hide()
 	var fat = func fat() -> void:
-		$Apparences/lance_attaque.show()
-		$Apparences/lance.hide()
-		$Heading.hide()
+		$LanceAnimation.play("ATTAQUE", -1, -1./0.3, true)
 	var end = func end() -> void:
-		$Apparences/lance_attaque.hide()
-		$Apparences/lance.show()
 		$Apparences/LanceEffectZone.set_block_signals(true)
 		$Apparences.rotation = 0
 	var reload = func reload() -> void:
