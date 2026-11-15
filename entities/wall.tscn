@@ -1,73 +1,9 @@
 [gd_scene format=3 uid="uid://do26tevcpnqvr"]
 
-[ext_resource type="Texture2D" uid="uid://3wjf4etjs5q8" path="res://assets/niveau0/wall_anim_v2.png" id="2_afsjk"]
+[ext_resource type="Texture2D" uid="uid://bwkikxflmu6j5" path="res://assets/paywall.png" id="1_301k8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
-size = Vector2(640, 78)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxinm"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rgwr"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g05hk"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3jtm7"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qouk5"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(16, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8fyi"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(32, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_315j0"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(0, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnpvq"]
-atlas = ExtResource("2_afsjk")
-region = Rect2(16, 32, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xbyin"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xxinm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4rgwr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g05hk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3jtm7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qouk5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t8fyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_315j0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qnpvq")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 13.0
-}]
+size = Vector2(604, 80)
 
 [node name="Wall" type="StaticBody2D" unique_id=775184600]
 collision_layer = 7
@@ -76,68 +12,26 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=452018105]
 shape = SubResource("RectangleShape2D_xbyin")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1230910656]
-texture_filter = 1
-position = Vector2(40, 3.814697e-06)
-scale = Vector2(5.0000005, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame = 1
-frame_progress = 0.20587489
+[node name="Paywall" type="Sprite2D" parent="." unique_id=1901031664]
+position = Vector2(-226.27333, 3.9999542)
+rotation = -1.5707964
+scale = Vector2(0.25460023, 0.25460023)
+texture = ExtResource("1_301k8")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2019866953]
-texture_filter = 1
-position = Vector2(120, 3.814697e-06)
-scale = Vector2(4.9999995, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame = 7
-frame_progress = 0.8343971
+[node name="Paywall2" type="Sprite2D" parent="." unique_id=2011922150]
+position = Vector2(-75.273285, 3.9999542)
+rotation = -1.5707964
+scale = Vector2(0.25460023, 0.25460023)
+texture = ExtResource("1_301k8")
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1929244996]
-texture_filter = 1
-position = Vector2(199.99998, 7.629394e-06)
-scale = Vector2(5.0000005, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame_progress = 0.40651712
+[node name="Paywall3" type="Sprite2D" parent="." unique_id=243254152]
+position = Vector2(75.7267, 3.9999542)
+rotation = -1.5707964
+scale = Vector2(0.25460023, 0.25460023)
+texture = ExtResource("1_301k8")
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." unique_id=140670566]
-texture_filter = 1
-position = Vector2(280, 7.629394e-06)
-scale = Vector2(4.9999995, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame_progress = 0.9796022
-
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=1178684348]
-texture_filter = 1
-position = Vector2(-279.99997, 3.814697e-06)
-scale = Vector2(5.0000005, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame_progress = 0.9263447
-
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="." unique_id=1785251250]
-texture_filter = 1
-position = Vector2(-200, 3.814697e-06)
-scale = Vector2(4.9999995, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame_progress = 0.49942994
-
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="." unique_id=160288406]
-texture_filter = 1
-position = Vector2(-119.999985, 7.629394e-06)
-scale = Vector2(5.0000005, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame_progress = 0.40651712
-
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="." unique_id=669386073]
-texture_filter = 1
-position = Vector2(-40, 7.629394e-06)
-scale = Vector2(4.9999995, 5.0000005)
-sprite_frames = SubResource("SpriteFrames_xbyin")
-autoplay = "default"
-frame_progress = 0.9796022
+[node name="Paywall4" type="Sprite2D" parent="." unique_id=1002306525]
+position = Vector2(226.7267, 3.9999542)
+rotation = -1.5707964
+scale = Vector2(0.25460023, 0.25460023)
+texture = ExtResource("1_301k8")
