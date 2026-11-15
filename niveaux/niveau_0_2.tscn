@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="9_eu5ii"]
 [ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="9_l1bo0"]
 [ext_resource type="PackedScene" uid="uid://c6yk3bjxbwf03" path="res://entities/planche.tscn" id="10_bb0of"]
+[ext_resource type="Script" uid="uid://u6meofsx82vm" path="res://scripts/line_edit.gd" id="11_y6une"]
 [ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="13_sihnt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e44y8"]
@@ -274,3 +275,16 @@ texture = ExtResource("13_sihnt")
 
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=610043839]
 position = Vector2(1609, 124)
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=2147236781]
+offset_left = 538.0
+offset_top = 32.0
+offset_right = 1057.0
+offset_bottom = 63.0
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("11_y6une")

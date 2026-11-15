@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b40vmsfdwar7u" path="res://entities/Enemies/SpiderBot.tscn" id="5_shev2"]
 [ext_resource type="Texture2D" uid="uid://bkcten02c4trc" path="res://assets/niveau0.1/LIRE.png" id="6_qe0cj"]
 [ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="7_s6x4r"]
+[ext_resource type="Script" uid="uid://u6meofsx82vm" path="res://scripts/line_edit.gd" id="8_s6x4r"]
 [ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="9_y1iim"]
 [ext_resource type="PackedScene" uid="uid://ly5pnyawof8v" path="res://entities/presence_spawner.tscn" id="11_mddl2"]
 
@@ -101,5 +102,18 @@ spread = Vector2(200, 200)
 position = Vector2(-504, -284)
 scale = Vector2(0.03964527, 0.18403198)
 shape = SubResource("RectangleShape2D_qe0cj")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1061437825]
+offset_left = 538.0
+offset_top = 32.0
+offset_right = 1057.0
+offset_bottom = 63.0
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("8_s6x4r")
 
 [connection signal="body_entered" from="PresenceSpawner2/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="13_82cpv"]
 [ext_resource type="Texture2D" uid="uid://bypllq4jvjefu" path="res://assets/niveau0/LienNiv0ModifCode.png" id="15_xfngk"]
 [ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="16_o0dhu"]
+[ext_resource type="Script" uid="uid://u6meofsx82vm" path="res://scripts/line_edit.gd" id="17_o0dhu"]
+[ext_resource type="Texture2D" uid="uid://dysypgv0lyqcl" path="res://assets/tuto_deplacements.png" id="18_5nbn0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyin"]
 size = Vector2(921.125, 120.69922)
@@ -356,5 +358,23 @@ freeze = true
 [node name="mechant2" parent="." unique_id=1695942320 instance=ExtResource("12_bum3b")]
 position = Vector2(1763, 488)
 freeze = true
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1424259674]
+offset_left = 534.0
+offset_top = 30.0
+offset_right = 1053.0
+offset_bottom = 61.0
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("17_o0dhu")
+
+[node name="TutoDeplacements" type="Sprite2D" parent="." unique_id=1756120522]
+position = Vector2(340, 65.00001)
+scale = Vector2(0.68181825, 0.6818182)
+texture = ExtResource("18_5nbn0")
 
 [connection signal="body_entered" from="LienNiv0ModifCode/Area2D" to="." method="_on_area_2d_body_entered"]

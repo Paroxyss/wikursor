@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ys7f8q6ahefi"]
 
 [ext_resource type="Script" uid="uid://dqc2cyt0dtlcu" path="res://scripts/mechant_1.gd" id="1_xba0d"]
-[ext_resource type="Texture2D" uid="uid://b6n5bggheuqo7" path="res://icon.svg" id="2_5s2gi"]
+[ext_resource type="Texture2D" uid="uid://di54hb8k24fgd" path="res://assets/grinch.png" id="2_jk5f3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0r6sc"]
 friction = 0.0
@@ -20,8 +20,9 @@ script = ExtResource("1_xba0d")
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1737081164]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_5s2gi")
+rotation = -1.5707964
+scale = Vector2(0.066933624, 0.06693365)
+texture = ExtResource("2_jk5f3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323403017]
 scale = Vector2(0.25, 0.25)
