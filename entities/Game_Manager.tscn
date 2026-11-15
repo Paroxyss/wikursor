@@ -14,5 +14,4 @@
 script = ExtResource("1_ehsp4")
 cameraFile = ExtResource("2_r3473")
 playerFile = ExtResource("3_sije6")
-index_niveau = 4
 levelList = Array[PackedScene]([ExtResource("4_uxh72"), ExtResource("5_uxh72"), ExtResource("6_6fngt"), ExtResource("7_6t5mb"), ExtResource("8_5ycn2"), ExtResource("6_gj4ss")])
