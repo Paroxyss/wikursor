@@ -36,6 +36,7 @@ func setup_level():
 	camera.niveau = niveau
 	camera.player = player
 	camera.zoom = Vector2(2, 2)
+	camera.setup()
 	add_child(camera)
 
 	niveau.next_level.connect(_on_next_level)
