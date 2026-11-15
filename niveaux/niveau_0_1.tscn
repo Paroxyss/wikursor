@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_5blix"]
 [ext_resource type="Texture2D" uid="uid://rm6mbqcxlcij" path="res://assets/niveau0.1/modif_stress.png" id="2_shev2"]
-[ext_resource type="PackedScene" uid="uid://b40vmsfdwar7u" path="res://entities/Enemies/SpiderBot.tscn" id="5_shev2"]
 [ext_resource type="Texture2D" uid="uid://bkcten02c4trc" path="res://assets/niveau0.1/LIRE.png" id="6_qe0cj"]
+[ext_resource type="PackedScene" uid="uid://cqby26bdjupf0" path="res://entities/Enemies/TrojanBot.tscn" id="7_doan1"]
 [ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="7_s6x4r"]
 [ext_resource type="Script" uid="uid://u6meofsx82vm" path="res://scripts/line_edit.gd" id="8_s6x4r"]
 [ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="9_y1iim"]
@@ -90,7 +90,7 @@ shape = SubResource("CircleShape2D_xbyin")
 [node name="PresenceSpawner2" parent="." unique_id=1296443757 node_paths=PackedStringArray("collision") instance=ExtResource("11_mddl2")]
 position = Vector2(1923, 520)
 collision = NodePath("../PresenceSpawner/Area2D")
-enemy = ExtResource("5_shev2")
+enemy = ExtResource("7_doan1")
 interval = 0.01
 first_delay = 0.01
 amount = 9

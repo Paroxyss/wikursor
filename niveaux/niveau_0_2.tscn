@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="9_eu5ii"]
 [ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="9_l1bo0"]
 [ext_resource type="PackedScene" uid="uid://c6yk3bjxbwf03" path="res://entities/planche.tscn" id="10_bb0of"]
+[ext_resource type="PackedScene" uid="uid://b40vmsfdwar7u" path="res://entities/Enemies/SpiderBot.tscn" id="10_vctbw"]
 [ext_resource type="Script" uid="uid://u6meofsx82vm" path="res://scripts/line_edit.gd" id="11_y6une"]
 [ext_resource type="Texture2D" uid="uid://bwwobrj7gi81l" path="res://assets/cursors/Normal.png" id="13_sihnt"]
 
@@ -257,12 +258,14 @@ shape = SubResource("WorldBoundaryShape2D_ggec4")
 
 [node name="Spawner2" parent="Spawners" unique_id=2013283453 instance=ExtResource("9_eu5ii")]
 position = Vector2(993, 238)
+enemy = ExtResource("10_vctbw")
 interval = 0.01
 first_delay = 0.01
 amount = 100
 
 [node name="Spawner" parent="Spawners" unique_id=1926012024 instance=ExtResource("9_eu5ii")]
 position = Vector2(1763, 946)
+enemy = ExtResource("10_vctbw")
 interval = 0.01
 first_delay = 0.01
 amount = 300
