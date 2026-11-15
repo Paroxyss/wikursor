@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://bt2roqe5qsb2q"]
 
 [ext_resource type="Script" uid="uid://dqc2cyt0dtlcu" path="res://scripts/mechant_1.gd" id="1_wikhv"]
-[ext_resource type="Texture2D" uid="uid://b6n5bggheuqo7" path="res://icon.svg" id="2_u4l7c"]
+[ext_resource type="Texture2D" uid="uid://ds5nbhb2bj6mk" path="res://assets/troll.png" id="2_et0o4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0r6sc"]
 friction = 0.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qh1oc"]
-radius = 64.12488
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nstax"]
+radius = 45.333336
+height = 130.66667
 
 [node name="TrollBot" type="RigidBody2D" unique_id=1636861212]
 collision_layer = 27
@@ -21,10 +22,10 @@ pvMax = 10
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1737081164]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_u4l7c")
+scale = Vector2(0.23365605, 0.23365605)
+texture = ExtResource("2_et0o4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323403017]
-scale = Vector2(0.75, 0.75)
-shape = SubResource("CircleShape2D_qh1oc")
+scale = Vector2(1.0326469, 1.0326469)
+shape = SubResource("CapsuleShape2D_nstax")
 debug_color = Color(0, 0.57307506, 0.83513063, 0.41960785)

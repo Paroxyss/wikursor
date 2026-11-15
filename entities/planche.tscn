@@ -10,19 +10,26 @@ collision_layer = 7
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=8296711]
+position = Vector2(11, 3)
 shape = SubResource("RectangleShape2D_xbyin")
 
 [node name="SpiderMur" type="Sprite2D" parent="." unique_id=1510003509]
-position = Vector2(-140.50002, -0.52107716)
-scale = Vector2(0.28313258, 0.2831326)
+position = Vector2(-152.00002, -12.090351)
+scale = Vector2(0.23694785, 0.2369479)
 texture = ExtResource("1_o4ouc")
 
 [node name="SpiderMur2" type="Sprite2D" parent="." unique_id=1837865130]
-position = Vector2(3, -0.52107716)
-scale = Vector2(0.28313258, 0.2831326)
+position = Vector2(-28.250006, 3.7063189)
+scale = Vector2(0.2540161, 0.25401613)
 texture = ExtResource("1_o4ouc")
 
 [node name="SpiderMur3" type="Sprite2D" parent="." unique_id=1001853663]
-position = Vector2(142.99998, -0.52107716)
-scale = Vector2(0.28313258, 0.2831326)
+position = Vector2(160.75, -18.378021)
+scale = Vector2(0.2118474, 0.21184741)
+texture = ExtResource("1_o4ouc")
+
+[node name="SpiderMur4" type="Sprite2D" parent="." unique_id=485434955]
+position = Vector2(89.00002, 17)
+rotation = 0.2815251
+scale = Vector2(0.17712453, 0.18218392)
 texture = ExtResource("1_o4ouc")

@@ -6,8 +6,9 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0r6sc"]
 friction = 0.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qh1oc"]
-radius = 64.12488
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hoif"]
+radius = 56.0
+height = 152.0
 
 [node name="GrinchBot" type="RigidBody2D" unique_id=1636861212]
 collision_layer = 25
@@ -26,5 +27,5 @@ texture = ExtResource("2_jk5f3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323403017]
 scale = Vector2(0.25, 0.25)
-shape = SubResource("CircleShape2D_qh1oc")
+shape = SubResource("CapsuleShape2D_0hoif")
 debug_color = Color(0, 0.57307506, 0.83513063, 0.41960785)

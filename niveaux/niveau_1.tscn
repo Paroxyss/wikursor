@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b583fp2ihth1t" path="res://assets/niveau1/niveau1_fond.png" id="2_00r75"]
 [ext_resource type="PackedScene" uid="uid://o4ujyt8a3byn" path="res://entities/Spawner.tscn" id="3_shev2"]
 [ext_resource type="PackedScene" uid="uid://ys7f8q6ahefi" path="res://entities/Enemies/GrinchBot.tscn" id="4_65gpw"]
+[ext_resource type="PackedScene" uid="uid://c6yk3bjxbwf03" path="res://entities/planche.tscn" id="5_65gpw"]
+[ext_resource type="PackedScene" uid="uid://bt2roqe5qsb2q" path="res://entities/Enemies/TrollBot.tscn" id="5_i6fbc"]
+[ext_resource type="Script" uid="uid://u6meofsx82vm" path="res://scripts/line_edit.gd" id="6_2g0qd"]
+[ext_resource type="Texture2D" uid="uid://72bc0dp33s4v" path="res://assets/combat_lien.png" id="6_clcfu"]
+[ext_resource type="Script" uid="uid://d2c5isw1o1mao" path="res://scripts/lien_niv_0_modif_shake.gd" id="7_nyro3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
 
@@ -15,9 +20,10 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
 
-[node name="Niveau Vide" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn")]
+[node name="Niveau 1" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_1sbf7")
 playerSpawn = NodePath("PlayerSpawn")
+spawnList = [NodePath("Spawners/Spawner")]
 
 [node name="Fond" type="Sprite2D" parent="." unique_id=972025712]
 position = Vector2(1396.8698, 795.006)
@@ -53,9 +59,172 @@ shape = SubResource("WorldBoundaryShape2D_mxr4r")
 [node name="Spawners" type="Node2D" parent="." unique_id=299839190]
 
 [node name="Spawner" parent="Spawners" unique_id=2013283453 instance=ExtResource("3_shev2")]
-position = Vector2(1424, 640)
+position = Vector2(1408, 744)
 enemy = ExtResource("4_65gpw")
 amount = 5
 
+[node name="Spawner2" parent="Spawners" unique_id=2076811881 instance=ExtResource("3_shev2")]
+position = Vector2(1712, 1416)
+enemy = ExtResource("5_i6fbc")
+first_delay = 0.01
+amount = 1
+spread = Vector2(0, 0)
+
+[node name="Spawner3" parent="Spawners" unique_id=341386766 instance=ExtResource("3_shev2")]
+position = Vector2(1824, 1336)
+enemy = ExtResource("5_i6fbc")
+first_delay = 0.01
+amount = 1
+spread = Vector2(0, 0)
+
+[node name="Spawner4" parent="Spawners" unique_id=1721514766 instance=ExtResource("3_shev2")]
+position = Vector2(1960, 1400)
+enemy = ExtResource("5_i6fbc")
+first_delay = 0.01
+amount = 1
+spread = Vector2(0, 0)
+
+[node name="Spawner5" parent="Spawners" unique_id=378733943 instance=ExtResource("3_shev2")]
+position = Vector2(1824, 1512)
+enemy = ExtResource("5_i6fbc")
+first_delay = 0.01
+amount = 1
+spread = Vector2(0, 0)
+
+[node name="CombatLien" type="Sprite2D" parent="." unique_id=1977561245]
+position = Vector2(1848, 1416)
+scale = Vector2(1.6625667, 1.6625667)
+texture = ExtResource("6_clcfu")
+script = ExtResource("7_nyro3")
+
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
-position = Vector2(1197, 772)
+position = Vector2(488, 368)
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=502706358]
+offset_left = 621.0
+offset_top = 46.0
+offset_right = 1232.0
+offset_bottom = 77.0
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("6_2g0qd")
+
+[node name="Murs" type="Node2D" parent="." unique_id=100478191]
+
+[node name="Planche" parent="Murs" unique_id=636436476 instance=ExtResource("5_65gpw")]
+position = Vector2(184, 448)
+rotation = -0.42878056
+
+[node name="Planche19" parent="Murs" unique_id=1551822904 instance=ExtResource("5_65gpw")]
+position = Vector2(2008, 264)
+rotation = -0.42878056
+
+[node name="Planche20" parent="Murs" unique_id=1792786953 instance=ExtResource("5_65gpw")]
+position = Vector2(1712, 312)
+rotation = 0.08999524
+
+[node name="Planche2" parent="Murs" unique_id=321115296 instance=ExtResource("5_65gpw")]
+position = Vector2(208, 560)
+
+[node name="Planche3" parent="Murs" unique_id=992057551 instance=ExtResource("5_65gpw")]
+position = Vector2(256, 688)
+rotation = -0.16943496
+
+[node name="Planche4" parent="Murs" unique_id=581828608 instance=ExtResource("5_65gpw")]
+position = Vector2(208, 856)
+
+[node name="Planche5" parent="Murs" unique_id=1258100864 instance=ExtResource("5_65gpw")]
+position = Vector2(200, 984)
+rotation = 0.16106564
+
+[node name="Planche6" parent="Murs" unique_id=1781272625 instance=ExtResource("5_65gpw")]
+position = Vector2(200, 1168)
+
+[node name="Planche7" parent="Murs" unique_id=2059891224 instance=ExtResource("5_65gpw")]
+position = Vector2(576, 1048)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche8" parent="Murs" unique_id=189590766 instance=ExtResource("5_65gpw")]
+position = Vector2(768, 880)
+rotation = 0.071205884
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche15" parent="Murs" unique_id=1121528276 instance=ExtResource("5_65gpw")]
+position = Vector2(544.00006, 928.00006)
+rotation = 0.071205884
+scale = Vector2(0.3395483, 0.3395483)
+
+[node name="Planche18" parent="Murs" unique_id=609826564 instance=ExtResource("5_65gpw")]
+position = Vector2(1688, 736)
+rotation = 0.071205884
+scale = Vector2(0.23759623, 0.23759623)
+
+[node name="Planche16" parent="Murs" unique_id=1730384641 instance=ExtResource("5_65gpw")]
+position = Vector2(480.00006, 600)
+rotation = 0.071205884
+scale = Vector2(0.3395483, 0.3395483)
+
+[node name="Planche9" parent="Murs" unique_id=1925524136 instance=ExtResource("5_65gpw")]
+position = Vector2(1160, 736.00006)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche10" parent="Murs" unique_id=357747509 instance=ExtResource("5_65gpw")]
+position = Vector2(1168, 1112)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche26" parent="Murs" unique_id=567316374 instance=ExtResource("5_65gpw")]
+position = Vector2(664, 1432.0001)
+rotation = 0.28886208
+scale = Vector2(-1.1573262, -1.1573262)
+
+[node name="Planche25" parent="Murs" unique_id=1916106136 instance=ExtResource("5_65gpw")]
+position = Vector2(1160.0001, 1376)
+rotation = -0.18141952
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche27" parent="Murs" unique_id=816695850 instance=ExtResource("5_65gpw")]
+position = Vector2(1160, 1592)
+rotation = -0.18141952
+scale = Vector2(0.8020614, 0.8020614)
+
+[node name="Planche11" parent="Murs" unique_id=1187896688 instance=ExtResource("5_65gpw")]
+position = Vector2(1456.0001, 1120)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche12" parent="Murs" unique_id=2113182866 instance=ExtResource("5_65gpw")]
+position = Vector2(1384.0001, 984)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche17" parent="Murs" unique_id=1014556521 instance=ExtResource("5_65gpw")]
+position = Vector2(1704, 888.00006)
+rotation = 0.30172294
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche13" parent="Murs" unique_id=444198297 instance=ExtResource("5_65gpw")]
+position = Vector2(1344, 568.00006)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche21" parent="Murs" unique_id=1278357331 instance=ExtResource("5_65gpw")]
+position = Vector2(624, 272)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche22" parent="Murs" unique_id=2037680480 instance=ExtResource("5_65gpw")]
+position = Vector2(2280, 80.00003)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche23" parent="Murs" unique_id=1727775489 instance=ExtResource("5_65gpw")]
+position = Vector2(2440, 48)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche24" parent="Murs" unique_id=927432038 instance=ExtResource("5_65gpw")]
+position = Vector2(2608, 72)
+scale = Vector2(0.4765417, 0.4765417)
+
+[node name="Planche14" parent="Murs" unique_id=718012291 instance=ExtResource("5_65gpw")]
+position = Vector2(1608, 520)
+rotation = -0.30515093
+scale = Vector2(0.597015, 0.66366553)
