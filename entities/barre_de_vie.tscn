@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://lpp2738dui0p"]
+
+[ext_resource type="Script" uid="uid://peps6dsh1ccf" path="res://scripts/barre_de_vie.gd" id="1_lmc75"]
+
+[sub_resource type="Gradient" id="Gradient_wbknp"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.015021459, 0.80472106)
+colors = PackedColorArray(1, 0, 0, 1, 0.8666667, 0.8666667, 0.8666667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xbyin"]
+gradient = SubResource("Gradient_wbknp")
+width = 200
+
+[node name="Barre de vie" type="Sprite2D" unique_id=1310077739]
+scale = Vector2(0.5, 10)
+texture = SubResource("GradientTexture1D_xbyin")
+script = ExtResource("1_lmc75")
+
+[node name="Hide" type="Timer" parent="." unique_id=1811338950]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Hide" to="." method="_on_hide_timeout"]

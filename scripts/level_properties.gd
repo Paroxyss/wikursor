@@ -1,6 +1,6 @@
 class_name LevelProperties extends Node2D
 
-var player : CharacterBody2D
+var player : Player
 
 signal next_level
 

@@ -306,11 +306,12 @@ first_delay = 4.0
 amount = 50
 spread = Vector2(500, 0)
 
-[node name="Lance TODO" type="Sprite2D" parent="." unique_id=200879763]
+[node name="Lance" type="Sprite2D" parent="." unique_id=200879763]
 position = Vector2(1798.0001, 382.00003)
 scale = Vector2(0.21829581, 0.21829581)
 texture = ExtResource("13_82cpv")
 script = ExtResource("16_o0dhu")
+amp = 0.3
 
 [node name="LePassage( tain tain tainnnn)" type="Node2D" parent="." unique_id=1227762194]
 position = Vector2(763, 1062)

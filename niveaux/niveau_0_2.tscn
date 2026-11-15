@@ -20,6 +20,9 @@ blend_mode = 3
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ggec4"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbyin"]
+radius = 10.049875
+
 [node name="Niveau 0_2" type="Node2D" unique_id=2042643648 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_36txj")
 playerSpawn = NodePath("PlayerSpawn")
@@ -271,8 +274,15 @@ first_delay = 0.01
 amount = 300
 spread = Vector2(1000, 100)
 
-[node name="Lance TODO" type="Sprite2D" parent="." unique_id=200879763]
-position = Vector2(1798.0001, 382.00003)
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=610043839]
+position = Vector2(1609, 124)
+
+[node name="Collectible" type="Area2D" parent="." unique_id=714008482]
+position = Vector2(1785, 374)
+script = ExtResource("10_y6une")
+
+[node name="Lance TODO" type="Sprite2D" parent="Collectible" unique_id=200879763]
+position = Vector2(13.000122, 8.0000305)
 scale = Vector2(0.21829581, 0.21829581)
 texture = ExtResource("13_sihnt")
 
@@ -291,3 +301,8 @@ selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("11_y6une")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible" unique_id=1510291336]
+shape = SubResource("CircleShape2D_xbyin")
+
+[connection signal="body_entered" from="Collectible" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Collectible" to="Collectible" method="_on_body_entered"]
