@@ -25,6 +25,7 @@ size = Vector2(67.36572, 20)
 
 [node name="Niveau 1" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn", "spawnList")]
 script = ExtResource("1_1sbf7")
+sizeOverride = Vector2(2369, 1465)
 playerSpawn = NodePath("PlayerSpawn")
 spawnList = [NodePath("Spawners/Spawner"), NodePath("Spawners/Spawner6")]
 

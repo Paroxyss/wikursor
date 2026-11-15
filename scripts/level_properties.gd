@@ -19,3 +19,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return
 	next_level.emit()
 	# passage niveau suinant
+
+func finish_level() -> void:
+	next_level.emit()

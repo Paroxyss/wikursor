@@ -54,6 +54,7 @@ func _on_next_level() -> void:
 func _on_game_over():
 	player.reset()
 	niveau.queue_free.call_deferred()
+	camera.queue_free()
 	niveau = levelList[index_niveau].instantiate()
 	setup_level.call_deferred()
 	

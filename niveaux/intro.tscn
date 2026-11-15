@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://c66ubkwlfhchc"]
+
+[ext_resource type="Script" uid="uid://cnhworq60jvgj" path="res://scripts/level_properties.gd" id="1_72fal"]
+[ext_resource type="Texture2D" uid="uid://dpn78680tlshq" path="res://assets/se-reperer-sur-un-quadrillage-exercice-niveau-2.png" id="2_72fal"]
+[ext_resource type="VideoStream" uid="uid://vgy3mxdrlsw6" path="res://assets/Openingo.ogv" id="3_u0i3v"]
+[ext_resource type="Script" uid="uid://cgg3ywsld1eow" path="res://niveaux/videoAuto.gd" id="3_wsfq7"]
+[ext_resource type="AudioStream" uid="uid://d2ysba8cf20tq" path="res://assets/Cri.wav" id="4_o6in4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ok58"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbwlo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rce7w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_exxot"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mxr4r"]
+
+[node name="Intro" type="Node2D" unique_id=383967567 node_paths=PackedStringArray("playerSpawn")]
+script = ExtResource("1_72fal")
+playerSpawn = NodePath("PlayerSpawn")
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=972025712]
+position = Vector2(489.99176, 278.85095)
+scale = Vector2(0.8116804, 0.32031783)
+texture = ExtResource("2_72fal")
+
+[node name="World Bounds" type="StaticBody2D" parent="." unique_id=365626665]
+collision_layer = 7
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_8ok58")
+
+[node name="Bottom" type="CollisionShape2D" parent="World Bounds" unique_id=1850367706]
+position = Vector2(104, 1465)
+rotation = -3.1415925
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_cbwlo")
+
+[node name="Right" type="CollisionShape2D" parent="World Bounds" unique_id=394839497]
+position = Vector2(2369, 104)
+rotation = -1.5707963
+shape = SubResource("WorldBoundaryShape2D_rce7w")
+
+[node name="Left" type="CollisionShape2D" parent="World Bounds" unique_id=709563518]
+position = Vector2(0, 104)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_exxot")
+
+[node name="Top" type="CollisionShape2D" parent="World Bounds" unique_id=442268058]
+position = Vector2(104, 0)
+scale = Vector2(-1, -1)
+shape = SubResource("WorldBoundaryShape2D_mxr4r")
+
+[node name="Spawners" type="Node2D" parent="." unique_id=299839190]
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=1554786708]
+position = Vector2(936, 525)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1221246472]
+script = ExtResource("3_wsfq7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sprite2D" unique_id=817371250]
+stream = ExtResource("4_o6in4")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Sprite2D" unique_id=1347733702]
+stream = ExtResource("4_o6in4")
+pitch_scale = 1.09
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Sprite2D" unique_id=1596579012]
+stream = ExtResource("4_o6in4")
+pitch_scale = 0.86
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Sprite2D" unique_id=498418483]
+stream = ExtResource("4_o6in4")
+pitch_scale = 1.78
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Sprite2D" unique_id=562405679]
+z_index = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5090201, 0.5090201)
+stream = ExtResource("3_u0i3v")
+autoplay = true
+
+[node name="AHHHHH" type="Timer" parent="Sprite2D" unique_id=793247251]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="zzz" type="Timer" parent="Sprite2D" unique_id=1297784678]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="finished" from="Sprite2D/VideoStreamPlayer" to="Sprite2D" method="_on_video_stream_player_finished"]
+[connection signal="timeout" from="Sprite2D/AHHHHH" to="Sprite2D" method="play_AHHHHHHHHHH"]
+[connection signal="timeout" from="Sprite2D/zzz" to="." method="finish_level"]
